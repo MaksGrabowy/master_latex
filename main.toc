@@ -1,0 +1,56 @@
+\babel@toc {polish}{}\relax 
+\babel@toc {british}{}\relax 
+\babel@toc {polish}{}\relax 
+\babel@toc {british}{}\relax 
+\babel@toc {polish}{}\relax 
+\babel@toc {british}{}\relax 
+\babel@toc {polish}{}\relax 
+\thispagestyle {empty}
+\contentsline {chapter}{\numberline {1}Wprowadzenie}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Wstęp i motywacja}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Cel i zakres pracy}{1}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Przegląd literatury}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Systemy percepcji w robotyce terenowej}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Metody lokalizacji i mapowania}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Metody nawigacji}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Zależności pomiędzy kinematyką robota a nawigacją}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Wstęp teoretyczny}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Podstawy kinematyki robotów}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Teoria estymacji stanu i fuzji danych sensorycznych}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Algorytmy SLAM}{5}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Modele planowania ruchu i omijania przeszkód}{5}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Architektura systemu i platformy sprzętowe}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Autonomiczny robot terenowy Rebob}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Czworonożny robot kroczący Unitree GO2}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Architektura oprogramowania}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Standardy tworzenia oprogramowania i przygotowanie systemu do wdrożeń}{7}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Środowisko symulacyjne}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modelowanie środowiska symulacyjnego w symulatorze Gazebo}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tworzenie modeli kinematycznych i dynamicznych}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Symulacja systemów percepcyjnych}{9}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Opracowanie zintegrowanego systemu percepcji}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Integracja czujników}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Przetwarzanie chmur punktów i filtracja danych}{11}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Implementacja metod 3D SLAM}{11}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Analiza przejezdności terenu}{11}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Konfiguracja i implementacja metod nawigacyjnych}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Konfiguracja przestrzeni kosztów dla środowiska 3D}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Implementacja metod nawigacyjnych}{13}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Adaptacja metod nawigacyjnych do platform testowych}{13}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Badania i analiza wyników}{15}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Metodyka badań i wskaźniki oceny wydajności}{15}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Eksperymenty w środowisku symulacyjnym}{15}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Testy rzeczywiste algorytmów na platformach testowych}{15}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Porównanie metod 3D SLAM}{15}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Porównanie algorytmów planowania ruchu}{15}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Wpływ kinematyki na skuteczność nawigacji terenowej}{15}{section.8.6}%
+\contentsline {chapter}{\numberline {9}Podsumowanie i wnioski}{17}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Podsumowanie zrealizowanych prac}{17}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Ocena uzyskanych wyników}{17}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Perspektywy dalszego rozwoju}{17}{section.9.3}%
+\contentsline {chapter}{Bibliografia}{19}{section*.8}%
+\contentsline {chapter}{Dokumentacja techniczna}{23}{appendix*.10}%
+\contentsline {chapter}{Spis skrótów i symboli}{25}{appendix*.11}%
+\contentsline {chapter}{Lista dodatkowych plików, uzupełniających tekst pracy (jeżeli dotyczy)}{27}{appendix*.12}%
+\contentsline {chapter}{Spis rysunków}{29}{appendix*.13}%
+\contentsline {chapter}{Spis tabel}{31}{appendix*.14}%
