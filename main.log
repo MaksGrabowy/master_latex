@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.4)  29 JUN 2026 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.4)  2 JUL 2026 00:13
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -922,63 +922,151 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@orf=\skip91
 )
 \c@stronyPozaNumeracja=\count472
- (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count473
-\lst@gtempboxa=\box67
-\lst@token=\toks52
-\lst@length=\count474
-\lst@currlwidth=\dimen316
-\lst@column=\count475
-\lst@pos=\count476
-\lst@lostspace=\dimen317
-\lst@width=\dimen318
-\lst@newlines=\count477
-\lst@lineno=\count478
-\lst@maxwidth=\dimen319
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count479
-\lst@skipnumbers=\count480
-\lst@framebox=\box68
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2023/02/27 1.9 listings configuration
-))
-Package: listings 2023/02/27 1.9 (Carsten Heinz)
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2023/11/28 v1.6.1 fvextra - extensions and patches for fancyvrb
+ (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count473
+\FV@InFile=\read5
+\FV@TabBox=\box67
+\c@FancyVerbLine=\count474
+\FV@StepNumber=\count475
+\FV@OutFile=\write5
+) (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+ (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)) (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count476
+\output=\toks52
+\linenoprevgraf=\count477
+\linenumbersep=\dimen316
+\linenumberwidth=\dimen317
+\c@linenumber=\count478
+\c@pagewiselinenumber=\count479
+\c@LN@truepage=\count480
+\c@internallinenumber=\count481
+\c@internallinenumbers=\count482
+\quotelinenumbersep=\dimen318
+\bframerule=\dimen319
+\bframesep=\dimen320
+\bframebox=\box68
+\linenoamsmath@ams@eqpen=\count483
+
+
+LaTeX Warning: Command \@parboxrestore  has changed.
+               Check if current package is valid.
+
+LaTeX Info: Redefining \\ on input line 3180.
 )
+
+Package fvextra Warning: csquotes should be loaded after fvextra, to avoid a warning from the lineno package on input line 36.
+
+\c@FancyVerbWriteLine=\count484
+\c@FancyVerbBufferIndex=\count485
+\c@FancyVerbBufferLength=\count486
+\c@FancyVerbBufferLine=\count487
+\c@FV@oldbufferlength=\count488
+\c@FV@TrueTabGroupLevel=\count489
+\c@FV@TrueTabCounter=\count490
+\FV@TabBox@Group=\box69
+\FV@TmpLength=\skip92
+\c@FV@HighlightLinesStart=\count491
+\c@FV@HighlightLinesStop=\count492
+\FV@LoopCount=\count493
+\FV@NCharsBox=\box70
+\FV@BreakIndent=\dimen321
+\FV@BreakIndentNChars=\count494
+\FV@BreakSymbolSepLeft=\dimen322
+\FV@BreakSymbolSepLeftNChars=\count495
+\FV@BreakSymbolSepRight=\dimen323
+\FV@BreakSymbolSepRightNChars=\count496
+\FV@BreakSymbolIndentLeft=\dimen324
+\FV@BreakSymbolIndentLeftNChars=\count497
+\FV@BreakSymbolIndentRight=\dimen325
+\FV@BreakSymbolIndentRightNChars=\count498
+\c@FancyVerbLineBreakLast=\count499
+\FV@LineBox=\box71
+\FV@LineIndentBox=\box72
+\c@FV@BreakBufferDepth=\count500
+\FV@LineWidth=\dimen326
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+) (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "main.w18")...executed.
+
+ (./main.w18)
+runsystem(rm -- "main.w18")...executed.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip93
+\fb@frw=\dimen327
+\fb@frh=\dimen328
+\FrameRule=\dimen329
+\FrameSep=\dimen330
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count501
+\float@exts=\toks53
+\float@box=\box73
+\@float@everytoks=\toks54
+\@floatcapt=\box74
+)
+\minted@appexistsfile=\read6
+\minted@bgbox=\box75
+\minted@code=\write6
+\c@minted@FancyVerbLineTemp=\count502
+\c@minted@pygmentizecounter=\count503
+\@float@every@listing=\toks55
+\c@listing=\count504
+)
+runsystem(mkdir -p _minted-main)...executed.
+
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'polish'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 389.
+runsystem(command -v pygmentize && touch main.aex)...executed.
+
+runsystem(rm main.aex)...executed.
+
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 387.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 389.
-LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1016,35 +1104,35 @@ LaTeX Font Info:    ... okay on input line 389.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count481
-\scratchdimen=\dimen320
-\scratchbox=\box69
-\nofMPsegments=\count482
-\nofMParguments=\count483
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count484
-\MPscratchDim=\dimen321
-\MPnumerator=\count485
-\makeMPintoPDFobject=\count486
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count505
+\scratchdimen=\dimen331
+\scratchbox=\box76
+\nofMPsegments=\count506
+\nofMParguments=\count507
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count508
+\MPscratchDim=\dimen332
+\MPnumerator=\count509
+\makeMPintoPDFobject=\count510
+\everyMPtoPDFconversion=\toks57
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 389.
+Package hyperref Info: Link coloring OFF on input line 387.
  (./main.out) (./main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write7
+\openout7 = `main.out'.
 
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 389.
+ on input line 387.
 
 Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: listings package is loaded.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
@@ -1056,4 +1144,450 @@ Package biblatex Info: ... file 'british.lbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/british.lbx
 File: british.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
-Package biblatex Inf
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout4 = `main-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl)
+Package biblatex Info: Reference section=0 on input line 387.
+Package biblatex Info: Reference segment=0 on input line 387.
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
+* v-part:(T,H,B)=(42.67912pt, 731.23584pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01773pt
+* \textheight=731.23584pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-61.46466pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=88.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 412.
+ (/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<politechnika_sl_logo_bw_pion_pl.pdf, id=212, 179.67125pt x 230.8625pt>
+File: politechnika_sl_logo_bw_pion_pl.pdf Graphic file (type pdf)
+<use politechnika_sl_logo_bw_pion_pl.pdf>
+Package pdftex.def Info: politechnika_sl_logo_bw_pion_pl.pdf  used on input line 414.
+(pdftex.def)             Requested size: 142.26378pt x 182.80913pt.
+ [1
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} <./politechnika_sl_logo_bw_pion_pl.pdf>] [2
+
+
+] [3] [4
+
+] (./main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 10.
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 10.
+ (/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 10.
+ (/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 10.
+ (/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [5])
+\tf@toc=\write8
+\openout8 = `main.toc'.
+
+ [6]
+Rozdzia\l  1.
+[1
+
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2
+
+]
+Rozdzia\l  2.
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4
+
+]
+Rozdzia\l  3.
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6
+
+]
+Rozdzia\l  4.
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8
+
+]
+Rozdzia\l  5.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 552.
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 557.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<photos/industrial_warehouse.png, id=341, 1071.29646pt x 790.0103pt>
+File: photos/industrial_warehouse.png Graphic file (type png)
+<use photos/industrial_warehouse.png>
+Package pdftex.def Info: photos/industrial_warehouse.png  used on input line 561.
+(pdftex.def)             Requested size: 364.19667pt x 268.56378pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<photos/barn.png, id=343, 1067.75383pt x 758.12646pt>
+File: photos/barn.png Graphic file (type png)
+<use photos/barn.png>
+Package pdftex.def Info: photos/barn.png  used on input line 568.
+(pdftex.def)             Requested size: 364.19667pt x 258.58092pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<photos/pipeline_1.png, id=344, 1076.25618pt x 772.29706pt>
+File: photos/pipeline_1.png Graphic file (type png)
+<use photos/pipeline_1.png>
+Package pdftex.def Info: photos/pipeline_1.png  used on input line 575.
+(pdftex.def)             Requested size: 364.19667pt x 261.32838pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10 <./photos/industrial_warehouse.png> <./photos/barn.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.35403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.35403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.35403pt}.
+
+[11 <./photos/pipeline_1.png>]
+\openout5 = `main.pyg'.
+
+ (./_minted-main/default.pygstyle) (./_minted-main/03FCB7209283E8C23BAE1446A0AB4A769EC2F2F0378912D8546C7AA53B101CD3.pygtex
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2.
+)
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 616.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.35403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.35403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.35403pt}.
+
+[13]
+\openout5 = `main.pyg'.
+
+ (./_minted-main/5CA0901B4E87FCA47C4E30B607A014C29EC2F2F0378912D8546C7AA53B101CD3.pygtex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<photos/foxglove_pipeline.png, id=378, 1096.095pt x 747.49854pt>
+File: photos/foxglove_pipeline.png Graphic file (type png)
+<use photos/foxglove_pipeline.png>
+Package pdftex.def Info: photos/foxglove_pipeline.png  used on input line 664.
+(pdftex.def)             Requested size: 364.19667pt x 248.37476pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14
+
+ <./photos/foxglove_pipeline.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.35403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.35403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.35403pt}.
+
+[15]
+\openout5 = `main.pyg'.
+
+ (./_minted-main/1BB653C427FAFB1DAD71668318A587269EC2F2F0378912D8546C7AA53B101CD3.pygtex)
+<photos/foxglove_warehouse_2.png, id=391, 1082.63293pt x 744.66441pt>
+File: photos/foxglove_warehouse_2.png Graphic file (type png)
+<use photos/foxglove_warehouse_2.png>
+Package pdftex.def Info: photos/foxglove_warehouse_2.png  used on input line 708.
+(pdftex.def)             Requested size: 364.19667pt x 250.50096pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.35403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.35403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.35403pt}.
+
+[17 <./photos/foxglove_warehouse_2.png>]
+\openout5 = `main.pyg'.
+
+ (./_minted-main/25C3D73C342D39E335D23C91D6CD72589EC2F2F0378912D8546C7AA53B101CD3.pygtex)
+<photos/foxglove_imu.png, id=404, 433.62pt x 333.71735pt>
+File: photos/foxglove_imu.png Graphic file (type png)
+<use photos/foxglove_imu.png>
+Package pdftex.def Info: photos/foxglove_imu.png  used on input line 732.
+(pdftex.def)             Requested size: 364.19667pt x 280.30028pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18
+
+ <./photos/foxglove_imu.png>]
+Rozdzia\l  6.
+[19
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20
+
+]
+Rozdzia\l  7.
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22
+
+]
+Rozdzia\l  8.
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24
+
+]
+Rozdzia\l  9.
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26
+
+]
+
+LaTeX Warning: Empty bibliography on input line 768.
+
+[27
+
+
+] [28] [29
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30
+
+] [31]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32
+
+] [33]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34
+
+] (./main.lof)
+\tf@lof=\write9
+\openout9 = `main.lof'.
+
+ [35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36
+
+] (./main.lot)
+\tf@lot=\write10
+\openout10 = `main.lot'.
+
+ [37] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: E5B1B5A9C8690A7DE4BCF840F4087B19;11596.
+runsystem(rm main.pyg)...executed.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 45914 strings out of 474222
+ 1022861 string characters out of 5748734
+ 1937975 words of memory out of 5000000
+ 67318 multiletter control sequences out of 15000+600000
+ 616071 words of font info for 72 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,11n,93p,1909b,2439s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (43 pages, 8334953 bytes).
+PDF statistics:
+ 564 PDF objects out of 1000 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 456 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n+nt}{\PYGZlt{}sensor}\PYG{+w}{ }\PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}imu\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}imu\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}always\PYGZus{}on}\PYG{n+nt}{\PYGZgt{}}1\PYG{n+nt}{\PYGZlt{}/always\PYGZus{}on\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}update\PYGZus{}rate}\PYG{n+nt}{\PYGZgt{}}20\PYG{n+nt}{\PYGZlt{}/update\PYGZus{}rate\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}visualize}\PYG{n+nt}{\PYGZgt{}}true\PYG{n+nt}{\PYGZlt{}/visualize\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}topic}\PYG{n+nt}{\PYGZgt{}}imu\PYG{n+nt}{\PYGZlt{}/topic\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/sensor\PYGZgt{}}
+\end{Verbatim}

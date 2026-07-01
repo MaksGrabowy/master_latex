@@ -330,46 +330,44 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 % biblioteka listings
-\usepackage{listings}
-\lstset{%
-morekeywords={string,exception,std,vector},% słowa kluczowe rozpoznawane przez pakiet listings
-language=C++,% C, Matlab, Python, SQL, TeX, XML, bash, ... – vide https://www.ctan.org/pkg/listings
-commentstyle=\textit,%
-identifierstyle=\textsf,%
-keywordstyle=\sffamily\bfseries, %\texttt, %
-%captionpos=b,%
-tabsize=3,%
-frame=lines,%
-numbers=left,%
-numberstyle=\tiny,%
-numbersep=5pt,%
-breaklines=true,%
-escapeinside={@*}{*@},%
-}
+% \usepackage{listings}
+% \lstset{%
+% morekeywords={string,exception,std,vector},% słowa kluczowe rozpoznawane przez pakiet listings
+% language=C++,% C, Matlab, Python, SQL, TeX, XML, bash, ... – vide https://www.ctan.org/pkg/listings
+% commentstyle=\textit,%
+% identifierstyle=\textsf,%
+% keywordstyle=\sffamily\bfseries, %\texttt, %
+% %captionpos=b,%
+% tabsize=3,%
+% frame=lines,%
+% numbers=left,%
+% numberstyle=\tiny,%
+% numbersep=5pt,%
+% breaklines=true,%
+% escapeinside={@*}{*@},%
+% }
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % pakiet minted
-%\usepackage{minted}
+% \usepackage{minted}
 
-% pakiet wymaga specjalnego kompilowania:
-% pdflatex -shell-escape main.tex
-% xelatex  -shell-escape main.tex
+% % pakiet wymaga specjalnego kompilowania:
+% % pdflatex -shell-escape main.tex
+% % xelatex  -shell-escape main.tex
 
-%\usepackage[chapter]{minted} % [section]
-%%\usemintedstyle{bw}   % czarno-białe kody 
-%
-%\setminted % https://ctan.org/pkg/minted
-%{
-%%fontsize=\normalsize,%\footnotesize,
-%%captionpos=b,%
-%tabsize=3,%
-%frame=lines,%
-%framesep=2mm,
-%numbers=left,%
-%numbersep=5pt,%
-%breaklines=true,%
-%escapeinside=@@,%
-%}
+\usepackage[chapter]{minted} % [section]
+%\usemintedstyle{bw}   % czarno-białe kody
+\setminted{
+%fontsize=\normalsize,%\footnotesize,
+%captionpos=b,%
+tabsize=3,%
+frame=lines,%
+framesep=2mm,
+numbers=left,%
+numbersep=5pt,%
+breaklines=true,%
+escapeinside=@@,%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -545,9 +543,196 @@ escapeinside={@*}{*@},%
 \section{Standardy tworzenia oprogramowania i przygotowanie systemu do wdrożeń}
 
 \chapter{Środowisko symulacyjne}
+
 \section{Modelowanie środowiska symulacyjnego w symulatorze Gazebo}
+Aby umożliwić płynne przeniesienie opracowanego systemu percepcji i nawigacji ze środowiska wirtualnego na rzeczywistą platformę mobilną, zdecydowano się na spójny, otwartoźródłowy stos technologiczny projektowany przez Open Source Robotics Foundation (OSRF). Rolę środowiska uruchomieniowego dla algorytmów autonomii pełni system ROS2 (Jazzy), natomiast do symulowania warunków terenowych i fizyki sensorów wykorzystano środowisko Gazebo (Harmonic).
+
+W celu najlepszego odzwierciedlenia rzeczywistego środowiska terenowego, w którym docelowo ma operować robot, wykorzystano mapy otoczenia udostępnione na otwartoźródłowej licencji. Podczas wyszukiwania odpowiedniego środowiska 3D kierowano się następującymi kryteriami:
+\begin{itemize}
+    \item \textbf{Obecność przewyższeń terenu:} Niezbędny element środowiska terenowego. Bez zróżnicowanej rzeźby terenu niemożliwe jest kompleksowe testowanie paczek nawigacji i mapowania w przestrzeni trójwymiarowej
+    \item \textbf{Obecność przeszkód:} Elementy takie jak drzewa, budynki, ławki czy krawężniki są niezbędne do weryfikacji algorytmów omijania przeszkód
+    \item \textbf{Wielkość środowiska:} Duży obszar pozwala na przetestowanie wydajności algorytmów tworzenia map o znacznych rozmiarach oraz globalnej lokalizacji robota
+\end{itemize}
+
+Posłużono się mapami dostępnymi w repozytorium \href{https://github.com/clearpathrobotics/clearpath_simulator}{clearpath\_simulator} firmy Clearpath Robotics. W szczególności mapy \verb|pipeline.sdf| oraz \verb|solar_farm.sdf| spełniły rygorystyczne wymagania postawione względem ukształtowania terenu. Dodatkowo wykorzystano mapy \href{https://app.gazebosim.org/maik/fuel/worlds/industrial-warehouse}{industrial\_warehouse.sdf} oraz \verb|warehouse.sdf| w celu przeprowadzenia testów porównawczych działania algorytmów nawigacji w terenie płaskim.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{photos/industrial_warehouse.png}
+    \caption{Widok symulowanego robota w środowisku industrial warehouse.}
+    \label{fig:industrial}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{photos/barn.png}
+    \caption{Widok symulowanego robota w środowisku solar farm.}
+    \label{fig:solar}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{photos/pipeline_1.png}
+    \caption{Widok symulowanego robota w środowisku pipeline.}
+    \label{fig:pipe}
+\end{figure}
+
+\clearpage
+
 \section{Tworzenie modeli kinematycznych i dynamicznych}
+W celu zamodelowania platformy mobilnej Rebob wykorzystano format URDF (Unified Robot Description Format). Proces tworzenia modelu rozpoczął się w środowisku CAD Autodesk Fusion, gdzie stworzono uproszczoną reprezentację geometrii robota. Tak przygotowany model wyeksportowano do formatu STL obsługiwanego przez silnik graficzny symulatora Gazebo. 
+
+Model URDF robota składa się z sześciu głównych członów (brył):
+\begin{itemize}
+    \item 1x Korpus główny (\verb|base_link|)
+    \item 4x Koło napędowe
+    \item 1x Skaner laserowy (LIDAR 3D)
+\end{itemize}
+
+W modelu zdefiniowano relacje pomiędzy każdą bryłą używając przekształceń statycznych. W formacie URDF każda relacja traktowana jest jako przegub. Warto zaznaczyć, że członem nie musi być rzeczywista bryła, ale może nim być również symulowana pozycja czujnika (np. IMU lub kamery 3D). W modelu wykorzystano następujące typy przegubów:
+\begin{itemize}
+    \item \textbf{Obrotowe (continuous)} - zastosowane dla każdego koła platformy
+    \item \textbf{Stałe (fixed)} - zastosowane dla elementów na sztywno połączonych z ramą (IMU, kamera 3D, LIDAR 3D, antena GPS)
+\end{itemize}
+
+Struktura modelu oparta jest na plikach \verb|xacro|, które pozwalają na makroprogramowanie w formacie XML i parametryzację przekształceń. Format ten umożliwia modularyzację poprzez dzielenie definicji na wiele plików, a następnie zawieranie ich jako podmodułów w pliku głównym robota Rebob.
+
+\begin{listing}[h!]
+\begin{minted}{xml}
+<joint name="wheel_rl_joint" type="continuous">
+  <origin xyz="-0.20582 0.439276 0.072471" rpy="0 0 -1.57"/>
+  <parent link="base_link"/>
+  <child link="wheel_rl"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="velodyne_joint" type="fixed">
+  <origin xyz="-0.23182 0.089629 0.366" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="velodyne"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+\end{minted}
+\caption{Przykładowe definicje przegubów w formacie xacro}
+\end{listing}
+
+Zarządzanie napędem i kinematyką w środowisku symulacyjnym zrealizowano za pomocą frameworka \verb|ros2_control|. Integracja symulatora Gazebo z \verb|ros2_control| pozwala na płynne przenoszenie algorytmów sterowania z symulacji na rzeczywistą platformę sprzętową bez modyfikacji kodu wysokopoziomowego - zmianie ulega jedynie interfejs sprzętowy (hardware interface). W ramach przeprowadzonych prac wykorzystano standardową wtyczkę kinematyki dla napędu różnicowego (differential drive) i przekierowano sygnały sterujące na wirtualne silniki symulatora, przygotowując jednocześnie architekturę pod autorską wtyczkę sterownika silników BLDC typu VESC używaną w rzeczywistej implementacji.
+
+\clearpage
+
 \section{Symulacja systemów percepcyjnych}
+Zintegrowany system percepcji wymagał odwzorowania charakterystyk sensorycznych robota w plikach konfiguracyjnych symulatora. W plikach \verb|xacro| zdefiniowano parametry symulowanych sensorów, dopasowując je do ich fizycznych odpowiedników. Do weryfikacji poprawności akwizycji danych z symulatora wykorzystano oprogramowanie Foxglove, którego integracja z systemem ROS2 odbywa się na podstawie paczki przygotowanej przez producenta, \verb|foxglove_bridge|.
+
+\subsection{Skaner laserowy (LIDAR 3D)}
+Parametry symulowanego skanera laserowego zostały zdefiniowane na podstawie specyfikacji technicznej czujnika Velodyne HDL32E. Narzędzie Foxglove potwierdziło poprawność działania sensora, m.in. na mapie \verb|pipeline| (Rys.~\ref{fig:foxglove-pipeline}), gdzie chmura punktów poprawnie odwzorowywała ukształtowanie terenu oraz przeszkody (np. zarys wejścia do jaskini), co jest kluczowe dla algorytmów SLAM w środowisku terenowym.
+
+\begin{listing}[h!]
+\begin{minted}{xml}
+<sensor name="laser" type="gpu_lidar">
+    <pose> 0 0 0 0 0 0 </pose>
+    <visualize>false</visualize>
+    <update_rate>10</update_rate>
+    <lidar>
+        <scan>
+            <horizontal>
+                <samples>360</samples>
+                <min_angle>-3.14</min_angle>
+                <max_angle>3.14</max_angle>
+            </horizontal>
+            <vertical>
+                <samples>32</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.54</min_angle>
+                <max_angle>0.18</max_angle>
+            </vertical>
+        </scan>
+        <range>
+            <min>0.3</min>
+            <max>100.0</max>
+        </range>
+    </lidar>
+    <topic>velodyne_scan</topic>
+    <gz_frame_id>laser_frame</gz_frame_id>
+    <visualize>true</visualize>
+</sensor>
+\end{minted}
+\caption{Definicja symulowanego skanera LIDAR 3D}
+\end{listing}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{photos/foxglove_pipeline.png}
+    \caption{Widok chmury punktów z symulowanego czujnika LIDAR na mapie pipeline.}
+	\label{fig:foxglove-pipeline}
+\end{figure}
+
+\clearpage
+
+\subsection{Kamera RGB-D}
+Symulowana kamera ToF (Time of Flight) została sparametryzowana na wzór przemysłowych czujników O3R 225 firmy IFM. Zaimplementowano programowe dodawanie szumu pomiarowego (typu Gaussa), co pozwala na ewaluację algorytmów filtracji oraz badanie odporności algorytmów nawigacji na zakłócenia percepcyjne. Czujnik zwraca obraz kolorowy, macierz głębi (format 32FC1) oraz chmurę punktów, co zweryfikowano wizualnie (Rys.~\ref{fig:foxglove-warehouse}).
+
+\begin{listing}[h!]
+\begin{minted}{xml}
+<sensor name="depth_rear" type="depth_camera">
+    <always_on>1</always_on>
+    <update_rate>20</update_rate>
+    <visualize>0</visualize>
+    <topic>depth_rear</topic>
+    <pose>0 0 0 0 0 0</pose>
+    <camera name="depth">
+        <horizontal_fov>1.83</horizontal_fov>
+        <vertical_fov>1.36</vertical_fov>
+        <image>
+            <width>224</width>
+            <height>172</height>
+            <format>RGB_INT8</format>
+        </image>
+        <clip>
+            <near>0.1</near>
+            <far>4</far>
+        </clip>
+        <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.1</stddev>
+        </noise>
+    </camera>
+    <gz_frame_id>rear_depth_frame</gz_frame_id>
+</sensor>
+\end{minted}
+\caption{Fragment definicji symulowanej kamery (czujnik głębi wraz z szumem)}
+\end{listing}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{photos/foxglove_warehouse_2.png}
+    \caption{Akwizycja danych z symulowanej kamery RGB-D (obraz kolorowy, głębia, chmura punktów).}
+    \label{fig:foxglove-warehouse}
+\end{figure}
+
+\clearpage
+
+\subsection{Inercyjna jednostka pomiarowa (IMU)}
+Moduł IMU dostarcza informacji o przyśpieszeniach liniowych i prędkościach kątowych obiektu. Na Rys.~\ref{fig:foxglove-imu} zaprezentowano odczyty z symulowanego czujnika, które dla robota znajdującego się w spoczynku na płaskim podłożu wskazują wartości bliskie zeru (z uwzględnieniem wektora grawitacji), co potwierdza prawidłową inicjalizację sensora w środowisku Gazebo.
+
+\begin{listing}[h!]
+\begin{minted}{xml}
+<sensor name="imu" type="imu">
+    <always_on>1</always_on>
+    <update_rate>20</update_rate>
+    <visualize>true</visualize>
+    <topic>imu</topic>
+</sensor>
+\end{minted}
+\caption{Definicja symulowanego czujnika IMU}
+\end{listing}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{photos/foxglove_imu.png}
+    \caption{Wizualizacja odczytów z symulowanego czujnika IMU.}
+    \label{fig:foxglove-imu}
+\end{figure}
 
 \chapter{Opracowanie zintegrowanego systemu percepcji}
 \section{Integracja czujników}

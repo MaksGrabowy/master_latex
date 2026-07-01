@@ -10,6 +10,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Widok symulowanego robota w środowisku industrial warehouse.}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Widok symulowanego robota w środowisku solar farm.}}{10}{figure.caption.9}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Widok symulowanego robota w środowisku pipeline.}}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Widok chmury punktów z symulowanego czujnika LIDAR na mapie pipeline.}}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Akwizycja danych z symulowanej kamery RGB-D (obraz kolorowy, głębia, chmura punktów).}}{17}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Wizualizacja odczytów z symulowanego czujnika IMU.}}{18}{figure.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

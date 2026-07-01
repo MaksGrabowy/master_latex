@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n+nt}{\PYGZlt{}sensor}\PYG{+w}{ }\PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}depth\PYGZus{}rear\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}depth\PYGZus{}camera\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}always\PYGZus{}on}\PYG{n+nt}{\PYGZgt{}}1\PYG{n+nt}{\PYGZlt{}/always\PYGZus{}on\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}update\PYGZus{}rate}\PYG{n+nt}{\PYGZgt{}}20\PYG{n+nt}{\PYGZlt{}/update\PYGZus{}rate\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}visualize}\PYG{n+nt}{\PYGZgt{}}0\PYG{n+nt}{\PYGZlt{}/visualize\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}topic}\PYG{n+nt}{\PYGZgt{}}depth\PYGZus{}rear\PYG{n+nt}{\PYGZlt{}/topic\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}pose}\PYG{n+nt}{\PYGZgt{}}0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{n+nt}{\PYGZlt{}/pose\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}camera}\PYG{+w}{ }\PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}depth\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}horizontal\PYGZus{}fov}\PYG{n+nt}{\PYGZgt{}}1.83\PYG{n+nt}{\PYGZlt{}/horizontal\PYGZus{}fov\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}vertical\PYGZus{}fov}\PYG{n+nt}{\PYGZgt{}}1.36\PYG{n+nt}{\PYGZlt{}/vertical\PYGZus{}fov\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}image}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}width}\PYG{n+nt}{\PYGZgt{}}224\PYG{n+nt}{\PYGZlt{}/width\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}height}\PYG{n+nt}{\PYGZgt{}}172\PYG{n+nt}{\PYGZlt{}/height\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}format}\PYG{n+nt}{\PYGZgt{}}RGB\PYGZus{}INT8\PYG{n+nt}{\PYGZlt{}/format\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}/image\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}clip}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}near}\PYG{n+nt}{\PYGZgt{}}0.1\PYG{n+nt}{\PYGZlt{}/near\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}far}\PYG{n+nt}{\PYGZgt{}}4\PYG{n+nt}{\PYGZlt{}/far\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}/clip\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}noise}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}type}\PYG{n+nt}{\PYGZgt{}}gaussian\PYG{n+nt}{\PYGZlt{}/type\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}mean}\PYG{n+nt}{\PYGZgt{}}0\PYG{n+nt}{\PYGZlt{}/mean\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}stddev}\PYG{n+nt}{\PYGZgt{}}0.1\PYG{n+nt}{\PYGZlt{}/stddev\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}/noise\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}/camera\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}gz\PYGZus{}frame\PYGZus{}id}\PYG{n+nt}{\PYGZgt{}}rear\PYGZus{}depth\PYGZus{}frame\PYG{n+nt}{\PYGZlt{}/gz\PYGZus{}frame\PYGZus{}id\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/sensor\PYGZgt{}}
+\end{Verbatim}

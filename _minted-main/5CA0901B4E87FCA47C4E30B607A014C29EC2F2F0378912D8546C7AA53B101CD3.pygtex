@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n+nt}{\PYGZlt{}sensor}\PYG{+w}{ }\PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}laser\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}gpu\PYGZus{}lidar\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}pose}\PYG{n+nt}{\PYGZgt{}}\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }0\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/pose\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}visualize}\PYG{n+nt}{\PYGZgt{}}false\PYG{n+nt}{\PYGZlt{}/visualize\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}update\PYGZus{}rate}\PYG{n+nt}{\PYGZgt{}}10\PYG{n+nt}{\PYGZlt{}/update\PYGZus{}rate\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}lidar}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}scan}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}horizontal}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}samples}\PYG{n+nt}{\PYGZgt{}}360\PYG{n+nt}{\PYGZlt{}/samples\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}min\PYGZus{}angle}\PYG{n+nt}{\PYGZgt{}}\PYGZhy{}3.14\PYG{n+nt}{\PYGZlt{}/min\PYGZus{}angle\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}max\PYGZus{}angle}\PYG{n+nt}{\PYGZgt{}}3.14\PYG{n+nt}{\PYGZlt{}/max\PYGZus{}angle\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}/horizontal\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}vertical}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}samples}\PYG{n+nt}{\PYGZgt{}}32\PYG{n+nt}{\PYGZlt{}/samples\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}resolution}\PYG{n+nt}{\PYGZgt{}}1\PYG{n+nt}{\PYGZlt{}/resolution\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}min\PYGZus{}angle}\PYG{n+nt}{\PYGZgt{}}\PYGZhy{}0.54\PYG{n+nt}{\PYGZlt{}/min\PYGZus{}angle\PYGZgt{}}
+\PYG{+w}{                }\PYG{n+nt}{\PYGZlt{}max\PYGZus{}angle}\PYG{n+nt}{\PYGZgt{}}0.18\PYG{n+nt}{\PYGZlt{}/max\PYGZus{}angle\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}/vertical\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}/scan\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}range}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}min}\PYG{n+nt}{\PYGZgt{}}0.3\PYG{n+nt}{\PYGZlt{}/min\PYGZgt{}}
+\PYG{+w}{            }\PYG{n+nt}{\PYGZlt{}max}\PYG{n+nt}{\PYGZgt{}}100.0\PYG{n+nt}{\PYGZlt{}/max\PYGZgt{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZlt{}/range\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}/lidar\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}topic}\PYG{n+nt}{\PYGZgt{}}velodyne\PYGZus{}scan\PYG{n+nt}{\PYGZlt{}/topic\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}gz\PYGZus{}frame\PYGZus{}id}\PYG{n+nt}{\PYGZgt{}}laser\PYGZus{}frame\PYG{n+nt}{\PYGZlt{}/gz\PYGZus{}frame\PYGZus{}id\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}visualize}\PYG{n+nt}{\PYGZgt{}}true\PYG{n+nt}{\PYGZlt{}/visualize\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/sensor\PYGZgt{}}
+\end{Verbatim}
