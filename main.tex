@@ -521,7 +521,19 @@ escapeinside=@@,%
 
 % TODO
 \chapter{Wprowadzenie}
+
 \section{Wstęp i motywacja}
+Obserwując trendy i tendencje w rozwoju systemów autonomicznych na przestrzeni ostatnich lat można zauważyć, że jest to aktualnie jedna z najbardziej prężnie rozwijających się dziedzin automatyki i robotyki \cite{trends_11299247}. Powodem jest to, że obiekty autonomiczne przestały być domeną wyłącznie zamkniętych laboratoriów badawczych i coraz powszechniej znajdują zastosowanie w rzeczywistych scenariuszach aplikacyjnych, takich jak logistyka, rolnictwo precyzyjne, misje poszukiwawczo-ratownicze czy eksploracja kosmosu. 
+
+% W ostatnich latach obserwuje się bezprecedensowy i niezwykle dynamiczny rozwój systemów autonomicznych. Roboty mobilne przestały być domeną wyłącznie zamkniętych laboratoriów badawczych i coraz powszechniej znajdują zastosowanie w rzeczywistych scenariuszach aplikacyjnych, takich jak logistyka, rolnictwo precyzyjne, misje poszukiwawczo-ratownicze czy eksploracja kosmosu. 
+
+Duża część robotów mobilnych, szczególnie w dziedzinie intralogistyki, porusza się tylko i wyłącznie w tzw. środowiskach ustrukturyzowanych - na płaskich posadzkach hal magazynowych czy produkcyjnych, gdzie warunki oświetleniowe są stałe, a trasy przejazdu przewidywalne. Zasadniczym problemem w robotyce mobilnej pozostaje jednak nawigacja w środowiskach nieustrukturyzowanych i terenowych jako uniwersalne narzędzie dla pojazdów o różnym układzie kinematycznym. Nierówności podłoża, dynamicznie pojawiacjące się przeszkody oraz brak punktów odniesienia sprawiają że standardowe metody lokalizacji i planowania ruchu stają się niewystarczające.
+
+% Większość komercyjnych rozwiązań klasy AMR (Autonomous Mobile Robots) doskonale radzi sobie w tzw. środowiskach ustrukturyzowanych -- na płaskich posadzkach hal magazynowych czy produkcyjnych, gdzie warunki oświetleniowe są stałe, a trasy przejazdu przewidywalne. Zasadniczym problemem i aktualnym wąskim gardłem rozwoju robotyki mobilnej pozostaje jednak nawigacja w środowiskach nieustrukturyzowanych i terenowych. Nierówności podłoża, zmienne warunki atmosferyczne, dynamicznie pojawiające się przeszkody o nieregularnych kształtach oraz brak infrastruktury referencyjnej sprawiają, że standardowe metody lokalizacji i planowania ścieżki stają się niewystarczające.
+
+
+
+% Aby robot mógł skutecznie operować w takich warunkach, niezbędne jest wyposażenie go w zaawansowane systemy percepcji zdolne do fuzji danych z wielu modalności (np. skanerów LIDAR, kamer głębi oraz systemów inercyjnych IMU). Właściwa interpretacja tych danych w czasie rzeczywistym jest kluczowa dla bezpiecznego planowania ruchu. Ponadto, rosnąca złożoność algorytmów wymusza stosowanie nowoczesnych, rozproszonych architektur oprogramowania. Z tego względu, motywacją do podjęcia niniejszej pracy jest potrzeba opracowania niezawodnego systemu autonomii dla platformy mobilnej operującej w terenie, z wykorzystaniem nowoczesnego ekosystemu ROS2, który wyznacza obecnie standardy w rozwoju zaawansowanej robotyki.
 \section{Cel i zakres pracy}
 
 \chapter{Przegląd literatury}
@@ -532,6 +544,7 @@ escapeinside=@@,%
 
 \chapter{Wstęp teoretyczny}
 \section{Podstawy kinematyki robotów}
+\section{Technologie sensoryczne w robotyce}
 \section{Teoria estymacji stanu i fuzji danych sensorycznych}
 \section{Algorytmy SLAM}
 \section{Modele planowania ruchu i omijania przeszkód}

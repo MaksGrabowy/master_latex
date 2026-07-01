@@ -16,5 +16,48 @@
   {}
 \endgroup
 
-\datalist[entry]{nty/global//global/global}\enddatalist
+\datalist[entry]{nty/global//global/global}
+  \entry{trends_11299247}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=LAN}{%
+         family={Latha},
+         familyi={L\bibinitperiod},
+         given={Adarsh\bibnamedelima Nanjaiya},
+         giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=ASN}{%
+         family={Anbalagan},
+         familyi={A\bibinitperiod},
+         given={Sabari\bibnamedelima Nathan},
+         giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Chiumento},
+         familyi={C\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Laarhuis},
+         familyi={L\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Wireless communication;Ecosystems;Semantics;Decision making;Autonomous aerial vehicles;Land vehicles;Cognition;Autonomous vehicles;Collaborative intelligence;Standards;Unmanned Vehicles;Autonomous Vehicles;Unmanned Aerial Vehicles;Unmanned Ground Vehicles;Unmanned Surface Vehicles;Ecosystem;Information Fusion}
+    \strng{namehash}{LAN+1}
+    \strng{fullhash}{LANASNCALJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{2025 16th IFIP Wireless and Mobile Networking Conference (WMNC)}
+    \verb{doi}
+    \verb 10.23919/WMNC67099.2025.11299247
+    \endverb
+    \field{pages}{176\bibrangedash 181}
+    \field{title}{Where Do We Go from Here? Charting the Future of Unmanned Vehicles}
+    \field{year}{2025}
+  \endentry
+\enddatalist
 \endinput
