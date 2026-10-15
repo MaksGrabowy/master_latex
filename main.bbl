@@ -17,6 +17,774 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{Ros2InNutshell}{article}{}
+    \name{author}{5}{}{%
+      {{hash=ABA}{%
+         family={Al-Batati},
+         familyi={A\bibinithyphendelim B\bibinitperiod},
+         given={Abdulrahman},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Koubaa},
+         familyi={K\bibinitperiod},
+         given={Anis},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GK}{%
+         family={Gabr},
+         familyi={G\bibinitperiod},
+         given={Khaled},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Abdelkader},
+         familyi={A\bibinitperiod},
+         given={Mohamed},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AH}{%
+         family={Aloqaily},
+         familyi={A\bibinitperiod},
+         given={Hamad},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{ROS 2, robotics middleware, real-time systems, distributed systems, multi-robot systems, network protocols, software ecosystems, autonomous systems}
+    \strng{namehash}{ABA+1}
+    \strng{fullhash}{ABAKAGKAMAH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    This survey offers the most comprehensive and systematic review to date of Robot Operating System 2 (ROS&nbsp;2), addressing the lack of a cohesive synthesis of its technical advances, challenges, and ecosystem evolution relative to ROS&nbsp;1. Our analysis is guided by three research questions: (RQ1) How does ROS&nbsp;2 improve upon ROS&nbsp;1, and what new limitations arise? (RQ2) What advances address redesign challenges and enable deployment? (RQ3) Which frameworks and tools shape its ecosystem and reveal gaps? To answer RQ1, we discuss the motivations for ROS&nbsp;2, its advantages over ROS&nbsp;1, and remaining limitations. For RQ2, we distill the ROS literature to identify work focused on ROS&nbsp;2 and organize it into four pillars: (a) middleware architecture, (b) real-time scheduling and hardware acceleration, (c) security and safety, and (d) multi-robot and distributed systems, showing how the literature mitigates limitations and enables deployments across domains such as autonomous vehicles, healthcare, agriculture, aerospace, logistics, and public safety. Finally, for RQ3, we survey the ROS&nbsp;2 ecosystem, covering frameworks, simulators, and more than 150 open-source packages, and we highlight gaps in deployed tools. This is complemented by an open-access database unifying ROS&nbsp;1 and ROS&nbsp;2 literature at https://asmbatati.github.io/ros2_survey/.%
+    }
+    \verb{doi}
+    \verb 10.1145/3815113
+    \endverb
+    \field{issn}{0360-0300}
+    \field{note}{Just Accepted}
+    \field{title}{ROS 2 in a Nutshell: A Survey}
+    \verb{url}
+    \verb https://doi.org/10.1145/3815113
+    \endverb
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Comput. Surv.}
+    \field{month}{05}
+    \field{year}{2026}
+  \endentry
+
+  \entry{SLAM_article}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AB}{%
+         family={Alsadik},
+         familyi={A\bibinitperiod},
+         given={Bashar},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Karam},
+         familyi={K\bibinitperiod},
+         given={Samer},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ABKS1}
+    \strng{fullhash}{ABKS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.38094/jastt204117
+    \endverb
+    \field{pages}{120\bibrangedash 131}
+    \field{title}{The Simultaneous Localization and Mapping (SLAM)-An Overview}
+    \field{volume}{2}
+    \field{journaltitle}{Journal of Applied Science and Technology Trends}
+    \field{month}{11}
+    \field{year}{2021}
+  \endentry
+
+  \entry{rb3_barfoot2017}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BTD}{%
+         family={Barfoot},
+         familyi={B\bibinitperiod},
+         given={Timothy\bibnamedelima D.},
+         giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{BTD1}
+    \strng{fullhash}{BTD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1017/9781316671528
+    \endverb
+    \field{title}{State Estimation for Robotics}
+    \verb{url}
+    \verb https://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser17.pdf
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{behroozpour2017lidar}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BB}{%
+         family={Behroozpour},
+         familyi={B\bibinitperiod},
+         given={Behnam},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SPAM}{%
+         family={Sandborn},
+         familyi={S\bibinitperiod},
+         given={Phillip A.\bibnamedelima M.},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=WMC}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Ming\bibnamedelima C.},
+         giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BBE}{%
+         family={Boser},
+         familyi={B\bibinitperiod},
+         given={Bernhard\bibnamedelima E.},
+         giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BB+1}
+    \strng{fullhash}{BBSPAMWMCBBE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1109/MCOM.2017.1700030
+    \endverb
+    \field{number}{10}
+    \field{pages}{135\bibrangedash 142}
+    \field{title}{Lidar System Architectures and Circuits}
+    \field{volume}{55}
+    \field{journaltitle}{IEEE Communications Magazine}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Beuchert2023RawGNSSFusion}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BJ}{%
+         family={Beuchert},
+         familyi={B\bibinitperiod},
+         given={Jonas},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Camurri},
+         familyi={C\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fallon},
+         familyi={F\bibinitperiod},
+         given={Maurice},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJCMFM1}
+    \strng{fullhash}{BJCMFM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2023 IEEE International Conference on Robotics and Automation (ICRA)}
+    \verb{doi}
+    \verb 10.1109/ICRA48891.2023.10161522
+    \endverb
+    \field{pages}{8415\bibrangedash 8421}
+    \field{title}{Factor Graph Fusion of Raw {GNSS} Sensing with {IMU} and Lidar for Precise Robot Localization without a Base Station}
+    \field{year}{2023}
+  \endentry
+
+  \entry{blanco2025mola_lo}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BCJL}{%
+         family={Blanco-Claraco},
+         familyi={B\bibinithyphendelim C\bibinitperiod},
+         given={Jose\bibnamedelima Luis},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BCJL1}
+    \strng{fullhash}{BCJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1177/02783649251316881
+    \endverb
+    \verb{eprint}
+    \verb 2407.20465
+    \endverb
+    \field{number}{9}
+    \field{pages}{1553\bibrangedash 1599}
+    \field{title}{{A flexible framework for accurate LiDAR odometry, map manipulation, and localization}}
+    \verb{url}
+    \verb https://doi.org/10.1177/02783649251316881
+    \endverb
+    \field{volume}{44}
+    \field{journaltitle}{The International Journal of Robotics Research}
+    \field{year}{2025}
+  \endentry
+
+  \entry{Blanco_Claraco_RSS_19}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=BCJL}{%
+         family={Blanco-Claraco},
+         familyi={B\bibinithyphendelim C\bibinitperiod},
+         given={Jose\bibnamedelima Luis},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BCJL1}
+    \strng{fullhash}{BCJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of Robotics: Science and Systems}
+    \verb{doi}
+    \verb 10.15607/RSS.2019.XV.043
+    \endverb
+    \field{title}{A Modular Optimization Framework for Localization and Mapping}
+    \field{year}{2019}
+  \endentry
+
+  \entry{DONG2025103457}{article}{}
+    \name{author}{5}{}{%
+      {{hash=DD}{%
+         family={Dong},
+         familyi={D\bibinitperiod},
+         given={Duo},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WZ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ziqi},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Guan},
+         familyi={G\bibinitperiod},
+         given={Jingyu},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=XY}{%
+         family={Xiao},
+         familyi={X\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yuqi},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \keyw{Nuclear accident, Emergency rescue, Robot, Radiation resistance, Rescue strategy}
+    \strng{namehash}{DD+1}
+    \strng{fullhash}{DDWZGJXYWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    Nuclear energy (NE) is an efficient and clean energy source with strong supply capacity and green environmental protection, which is the guarantee for achieving the “dual carbon” goal. The safe use of NE is the primary task, and the rapid emergency response to nuclear accidents is the pillar of ensuring nuclear safety. Using robots instead of workers into high-risk areas of nuclear accidents to complete on-site reconnaissance, radiation monitoring, cleaning and decontamination, emergency communication, personnel search and other rescue tasks can improve the efficiency of nuclear accident emergency response, reduce economic losses and social negative effects caused by nuclear accidents. With the continuous expansion of NE utilization scale worldwide, nuclear safety assurance is extremely urgent, and the research and development of nuclear accident emergency rescue robots is becoming increasingly important. This paper reviews the research status and development trends of nuclear accident emergency rescue robots, and proposes the key technical parameters of rescue robots, aiming at providing reference for the research and development of nuclear accident emergency rescue robots.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.net.2025.103457
+    \endverb
+    \field{issn}{1738-5733}
+    \field{number}{6}
+    \field{pages}{103457}
+    \field{title}{Research on key technology and application progress of rescue robot in nuclear accident emergency situation}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S1738573325000257
+    \endverb
+    \field{volume}{57}
+    \field{journaltitle}{Nuclear Engineering and Technology}
+    \field{year}{2025}
+  \endentry
+
+  \entry{dudek2008inertial}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=DG}{%
+         family={Dudek},
+         familyi={D\bibinitperiod},
+         given={Gregory},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Jenkin},
+         familyi={J\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=SB}{%
+         family={Siciliano},
+         familyi={S\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KO}{%
+         family={Khatib},
+         familyi={K\bibinitperiod},
+         given={Oussama},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{DGJM1}
+    \strng{fullhash}{DGJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{booktitle}{Springer Handbook of Robotics}
+    \field{isbn}{978-3-540-23957-4}
+    \field{pages}{477\bibrangedash 490}
+    \field{title}{Inertial Sensors, GPS, and Odometry}
+    \list{location}{1}{%
+      {Berlin, Heidelberg}%
+    }
+    \field{year}{2008}
+  \endentry
+
+  \entry{epton2007odometry}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=ET}{%
+         family={Epton},
+         familyi={E\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ET1}
+    \strng{fullhash}{ET1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{title}{Odometry Correction of a Mobile Robot Using a Range-Finding Laser}
+    \verb{url}
+    \verb https://cecas.clemson.edu/~ahoover/theses/epton-thesis.pdf
+    \endverb
+    \list{institution}{1}{%
+      {Clemson University}%
+    }
+    \field{type}{Master's Thesis}
+    \field{month}{12}
+    \field{year}{2007}
+  \endentry
+
+  \entry{tof_confidence_filtering}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FS}{%
+         family={Foix},
+         familyi={F\bibinitperiod},
+         given={Sergi},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AG}{%
+         family={Aleny{\`a}},
+         familyi={A\bibinitperiod},
+         given={Guillem},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Torras},
+         familyi={T\bibinitperiod},
+         given={Carme},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FSAGTC1}
+    \strng{fullhash}{FSAGTC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1109/JSEN.2010.2101060
+    \endverb
+    \field{number}{9}
+    \field{pages}{1917\bibrangedash 1926}
+    \field{title}{Lock-in Time-of-Flight ({ToF}) Cameras: A Survey}
+    \verb{url}
+    \verb https://doi.org/10.1109/JSEN.2010.2101060
+    \endverb
+    \field{volume}{11}
+    \field{journaltitle}{IEEE Sensors Journal}
+    \field{year}{2011}
+  \endentry
+
+  \entry{imu_noise_modeling}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FC}{%
+         family={Forster},
+         familyi={F\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Carlone},
+         familyi={C\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=DF}{%
+         family={Dellaert},
+         familyi={D\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Scaramuzza},
+         familyi={S\bibinitperiod},
+         given={Davide},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FC+1}
+    \strng{fullhash}{FCCLDFSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1109/TRO.2016.2597321
+    \endverb
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 21}
+    \field{title}{On-Manifold Preintegration for Real-Time Visual--Inertial Odometry}
+    \verb{url}
+    \verb https://dellaert.github.io/files/Forster16tro.pdf
+    \endverb
+    \field{volume}{33}
+    \field{journaltitle}{IEEE Transactions on Robotics}
+    \field{year}{2017}
+  \endentry
+
+  \entry{GRIFFITHS1997485}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GIJ}{%
+         family={Griffiths},
+         familyi={G\bibinitperiod},
+         given={Ian\bibnamedelima J.},
+         giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MQH}{%
+         family={Mehdi},
+         familyi={M\bibinitperiod},
+         given={Qasim\bibnamedelima H.},
+         giveni={Q\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Tingkai},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GNE}{%
+         family={Gough},
+         familyi={G\bibinitperiod},
+         given={Norman\bibnamedelima E.},
+         giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \keyw{Path planning, Autonomous guided vehicles, Genetic algorithms, Microcomputers}
+    \strng{namehash}{GIJ+1}
+    \strng{fullhash}{GIJMQHWTGNE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    This paper details work on the development of an path planning system for an automated guided vehicle. An evolutionary approach, using a genetic algorithm, is taken which uses an interpretation scheme to ensure that all generated solutions are legal. Results are presented which show that this approach has the ability to plan a route between two points that is optimal in terms of both distance travelled and time. The algorithm is designed so that it could be embedded within a microcontroller and provide some intelligent on board control.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/S1474-6670(17)43312-X
+    \endverb
+    \field{issn}{1474-6670}
+    \field{note}{3rd IFAC Symposium on Intelligent Components and Instruments For Control Applications 1997 (SICICA '97), Annecy, France, 9-11 June}
+    \field{number}{7}
+    \field{pages}{485\bibrangedash 490}
+    \field{title}{A Genetic Algorithm for Path Planning}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S147466701743312X
+    \endverb
+    \field{volume}{30}
+    \field{journaltitle}{IFAC Proceedings Volumes}
+    \field{year}{1997}
+  \endentry
+
+  \entry{GUO2019106467}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GH}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Hui},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=MZ}{%
+         family={Mao},
+         familyi={M\bibinitperiod},
+         given={Zhaoyong},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=DW}{%
+         family={Ding},
+         familyi={D\bibinitperiod},
+         given={Wenjun},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Peiliang},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{Unmanned surface vehicle (USV), Cumulative detection probability, Improved genetic algorithm, Adaptive mutation}
+    \strng{namehash}{GH+1}
+    \strng{fullhash}{GHMZDWLP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    A planning model for simultaneously optimizing the unmanned surface vehicle's (USV's) direction and speed is established for searching submarines. The USV detection model is achieved through the underwater sonar search principle. An improved genetic algorithm is employed for maximizing cumulative detection probability (CDP), which uses three control factors to control the direction and amplitude of mutation adaptively and improve the convergence speed. In the simulation, the escaping target is assumed unknown direction, and many reasonable and efficient search paths are obtained. The analysis results of the evolutionary curve show that the proposed algorithm has the advantages of strong stability and fast convergence and is suitable for USV search problem.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.compeleceng.2019.106467
+    \endverb
+    \field{issn}{0045-7906}
+    \field{pages}{106467}
+    \field{title}{Optimal search path planning for unmanned surface vehicle based on an improved genetic algorithm}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0045790619310006
+    \endverb
+    \field{volume}{79}
+    \field{journaltitle}{Computers and Electrical Engineering}
+    \field{year}{2019}
+  \endentry
+
+  \entry{rb3_hart1968}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HPE}{%
+         family={Hart},
+         familyi={H\bibinitperiod},
+         given={Peter\bibnamedelima E.},
+         giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=NNJ}{%
+         family={Nilsson},
+         familyi={N\bibinitperiod},
+         given={Nils\bibnamedelima J.},
+         giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=RB}{%
+         family={Raphael},
+         familyi={R\bibinitperiod},
+         given={Bertram},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HPENNJRB1}
+    \strng{fullhash}{HPENNJRB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1109/TSSC.1968.300136
+    \endverb
+    \field{number}{2}
+    \field{pages}{100\bibrangedash 107}
+    \field{title}{A Formal Basis for the Heuristic Determination of Minimum Cost Paths}
+    \verb{url}
+    \verb https://doi.org/10.1109/TSSC.1968.300136
+    \endverb
+    \field{volume}{4}
+    \field{journaltitle}{IEEE Transactions on Systems Science and Cybernetics}
+    \field{year}{1968}
+  \endentry
+
+  \entry{itof_phase_shift}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HR}{%
+         family={Horaud},
+         familyi={H\bibinitperiod},
+         given={Radu},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Hansard},
+         familyi={H\bibinitperiod},
+         given={Miles},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=EG}{%
+         family={Evangelidis},
+         familyi={E\bibinitperiod},
+         given={Georgios},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={M{\'e}nier},
+         familyi={M\bibinitperiod},
+         given={Cl{\'e}ment},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HR+1}
+    \strng{fullhash}{HRHMEGMC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1007/s00138-016-0784-4
+    \endverb
+    \field{number}{7}
+    \field{pages}{1005\bibrangedash 1020}
+    \field{title}{An Overview of Depth Cameras and Range Scanners Based on Time-of-Flight Technologies}
+    \verb{url}
+    \verb https://webspace.eecs.qmul.ac.uk/miles.hansard/papers/horaud-TOF.pdf
+    \endverb
+    \field{volume}{27}
+    \field{journaltitle}{Machine Vision and Applications}
+    \field{year}{2016}
+  \endentry
+
+  \entry{javid_article}{article}{}
+    \name{author}{1}{}{%
+      {{hash=JA}{%
+         family={Javaid},
+         familyi={J\bibinitperiod},
+         given={Adeel},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JA1}
+    \strng{fullhash}{JA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.2139/ssrn.2340905
+    \endverb
+    \field{title}{Understanding Dijkstra Algorithm}
+    \field{journaltitle}{SSRN Electronic Journal}
+    \field{month}{01}
+    \field{year}{2013}
+  \endentry
+
+  \entry{rrt_article}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KD}{%
+         family={Kadhim},
+         familyi={K\bibinitperiod},
+         given={Dena},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RF}{%
+         family={Raheem},
+         familyi={R\bibinitperiod},
+         given={Firas},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sadiq},
+         familyi={S\bibinitperiod},
+         given={Ahmed},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KDRFSA1}
+    \strng{fullhash}{KDRFSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.2478/cait-2024-0026
+    \endverb
+    \field{pages}{78\bibrangedash 101}
+    \field{title}{A Systematic Review of Rapidly Exploring Random Tree RRT Algorithm for Single and Multiple Robots}
+    \field{volume}{24}
+    \field{journaltitle}{Cybernetics and Information Technologies}
+    \field{month}{09}
+    \field{year}{2024}
+  \endentry
+
+  \entry{solid_state_tof_cameras}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LR}{%
+         family={Lange},
+         familyi={L\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Seitz},
+         familyi={S\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRSP1}
+    \strng{fullhash}{LRSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1109/3.910448
+    \endverb
+    \field{number}{3}
+    \field{pages}{390\bibrangedash 397}
+    \field{title}{Solid-State Time-of-Flight Range Camera}
+    \verb{url}
+    \verb https://doi.org/10.1109/3.910448
+    \endverb
+    \field{volume}{37}
+    \field{journaltitle}{IEEE Journal of Quantum Electronics}
+    \field{year}{2001}
+  \endentry
+
   \entry{trends_11299247}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=LAN}{%
@@ -58,6 +826,1600 @@
     \field{pages}{176\bibrangedash 181}
     \field{title}{Where Do We Go from Here? Charting the Future of Unmanned Vehicles}
     \field{year}{2025}
+  \endentry
+
+  \entry{li2023transformer}{article}{}
+    \name{author}{9}{}{%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiangtai},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=DH}{%
+         family={Ding},
+         familyi={D\bibinitperiod},
+         given={Henghui},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ZW}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Wenwei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=YH}{%
+         family={Yuan},
+         familyi={Y\bibinitperiod},
+         given={Haobo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CG}{%
+         family={Cheng},
+         familyi={C\bibinitperiod},
+         given={Guangliang},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=JP}{%
+         family={Jiangmiao},
+         familyi={J\bibinitperiod},
+         given={Pang},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Kai},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Ziwei},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=LCC}{%
+         family={Loy},
+         familyi={L\bibinitperiod},
+         given={Chen\bibnamedelima Change},
+         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LX+1}
+    \strng{fullhash}{LXDHZWYHCGJPCKLZLCC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Transformer-Based Visual Segmentation: A Survey}
+    \field{journaltitle}{T-PAMI}
+    \field{year}{2024}
+  \endentry
+
+  \entry{ros2DDS}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=LY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Yanan},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=GY}{%
+         family={Guan},
+         familyi={G\bibinitperiod},
+         given={Yong},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiaojuan},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Rui},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=ZJ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Jie},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Service robots;Publishing;Automata;System recovery;Probabilistic logic;Safety;Security;ROS;DDS;publish/subscribe;model checking;probabilistic timed automata}
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYGYLXWRZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{2018 16th ACM/IEEE International Conference on Formal Methods and Models for System Design (MEMOCODE)}
+    \verb{doi}
+    \verb 10.1109/MEMCOD.2018.8556970
+    \endverb
+    \field{pages}{1\bibrangedash 5}
+    \field{title}{Formal Analysis and Verification of DDS in ROS2}
+    \field{year}{2018}
+  \endentry
+
+  \entry{mi15040531}{article}{}
+    \name{author}{8}{}{%
+      {{hash=LJ}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Jing},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZX}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Xiangyu},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZC}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={Chao},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=JY}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Yiming},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=QW}{%
+         family={Qi},
+         familyi={Q\bibinitperiod},
+         given={Wen},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=XK}{%
+         family={Xiang},
+         familyi={X\bibinitperiod},
+         given={Kui},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pang},
+         familyi={P\bibinitperiod},
+         given={Muye},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Tang},
+         familyi={T\bibinitperiod},
+         given={Biwei},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LJ+1}
+    \strng{fullhash}{LJZXZCJYQWXKPMTB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    The integration of advanced sensor technologies has significantly propelled the dynamic development of robotics, thus inaugurating a new era in automation and artificial intelligence. Given the rapid advancements in robotics technology, its core area—robot control technology—has attracted increasing attention. Notably, sensors and sensor fusion technologies, which are considered essential for enhancing robot control technologies, have been widely and successfully applied in the field of robotics. Therefore, the integration of sensors and sensor fusion techniques with robot control technologies, which enables adaptation to various tasks in new situations, is emerging as a promising approach. This review seeks to delineate how sensors and sensor fusion technologies are combined with robot control technologies. It presents nine types of sensors used in robot control, discusses representative control methods, and summarizes their applications across various domains. Finally, this survey discusses existing challenges and potential future directions.%
+    }
+    \verb{doi}
+    \verb 10.3390/mi15040531
+    \endverb
+    \field{issn}{2072-666X}
+    \field{number}{4}
+    \field{title}{Robotics Perception and Control: Key Technologies and Applications}
+    \verb{url}
+    \verb https://www.mdpi.com/2072-666X/15/4/531
+    \endverb
+    \field{volume}{15}
+    \field{journaltitle}{Micromachines}
+    \field{year}{2024}
+  \endentry
+
+  \entry{rb3_macenski2023rpp}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MS}{%
+         family={Macenski},
+         familyi={M\bibinitperiod},
+         given={Steve},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Singh},
+         familyi={S\bibinitperiod},
+         given={Shrijit},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Mart{\'i}n},
+         familyi={M\bibinitperiod},
+         given={Francisco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gin{\'e}s},
+         familyi={G\bibinitperiod},
+         given={Jonatan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MS+1}
+    \strng{fullhash}{MSSSMFGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1007/s10514-023-10097-6
+    \endverb
+    \field{number}{6}
+    \field{pages}{685\bibrangedash 694}
+    \field{title}{Regulated Pure Pursuit for Robot Path Tracking}
+    \verb{url}
+    \verb https://arxiv.org/abs/2305.20026
+    \endverb
+    \field{volume}{47}
+    \field{journaltitle}{Autonomous Robots}
+    \field{year}{2023}
+  \endentry
+
+  \entry{macenski2020marathon2}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MS}{%
+         family={Macenski},
+         familyi={M\bibinitperiod},
+         given={Steven},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Martin},
+         familyi={M\bibinitperiod},
+         given={Francisco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={White},
+         familyi={W\bibinitperiod},
+         given={Ruffin},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GCJ}{%
+         family={Ginés\bibnamedelima Clavero},
+         familyi={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={Jonatan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MS+2}
+    \strng{fullhash}{MSMFWRGCJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+    \field{title}{The Marathon 2: A Navigation System}
+    \field{year}{2020}
+  \endentry
+
+  \entry{demiguel2025iilearnexperiencebased}{misc}{}
+    \name{author}{6}{}{%
+      {{hash=�dMM}{%
+         prefix={Ángel\bibnamedelima de},
+         prefixi={�\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Miguel},
+         familyi={M\bibinitperiod},
+         given={Miguel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Beltrán},
+         familyi={B\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CJS}{%
+         family={Cely},
+         familyi={C\bibinitperiod},
+         given={Juan\bibnamedelima S.},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Martín},
+         familyi={M\bibinitperiod},
+         given={Francisco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MJC}{%
+         family={Manzanares},
+         familyi={M\bibinitperiod},
+         given={Juan\bibnamedelima Carlos},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={García},
+         familyi={G\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MM�d+1}
+    \strng{fullhash}{MM�dBJCJSMFMJCGA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{eprint}
+    \verb 2507.00882
+    \endverb
+    \field{title}{I Move Therefore I Learn: Experience-Based Traversability in Outdoor Robotics}
+    \verb{url}
+    \verb https://arxiv.org/abs/2507.00882
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.RO}
+    \field{year}{2025}
+  \endentry
+
+  \entry{rrtstar_article}{article}{}
+    \name{author}{3}{}{%
+      {{hash=NJ}{%
+         family={Nasir},
+         familyi={N\bibinitperiod},
+         given={Jauwairia},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=IF}{%
+         family={Islam},
+         familyi={I\bibinitperiod},
+         given={Fahad},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=AY}{%
+         family={Ayaz},
+         familyi={A\bibinitperiod},
+         given={Yasar},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NJIFAY1}
+    \strng{fullhash}{NJIFAY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.17576/apjitm-2013-0202-04
+    \endverb
+    \field{pages}{39\bibrangedash 51}
+    \field{title}{Adaptive Rapidly-Exploring-Random-Tree-Star (RRT*) -Smart: Algorithm Characteristics and Behavior Analysis in Complex Environments}
+    \field{volume}{02}
+    \field{journaltitle}{Asia-Pacific Journal of Information Technology and Multimedia}
+    \field{month}{12}
+    \field{year}{2013}
+  \endentry
+
+  \entry{rb3_nav2_costmap}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={{Nav2 Project}},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Costmap {2D}: {Nav2} Documentation ({Jazzy})}
+    \verb{url}
+    \verb https://docs.nav2.org/jazzy/configuration_and_development/configurati
+    \verb on_guide/core_servers/costmap_2d/
+    \endverb
+    \field{urlday}{11}
+    \field{urlmonth}{10}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{rb3_nav2_inflation}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={{Nav2 Project}},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Inflation Layer Parameters: {Nav2} Documentation ({Jazzy})}
+    \verb{url}
+    \verb https://docs.nav2.org/jazzy/configuration_and_development/configurati
+    \verb on_guide/core_servers/costmap_2d/costmap_plugins/inflation/
+    \endverb
+    \field{urlday}{12}
+    \field{urlmonth}{10}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{machines12040218}{article}{}
+    \name{author}{5}{}{%
+      {{hash=QJ}{%
+         family={Qu},
+         familyi={Q\bibinitperiod},
+         given={Jiwei},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZZ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Zhe},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=QZ}{%
+         family={Qin},
+         familyi={Q\bibinitperiod},
+         given={Zheyu},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=GK}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Kangquan},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QJ+1}
+    \strng{fullhash}{QJZZQZGKLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Q}
+    \field{sortinithash}{Q}
+    \field{abstract}{%
+    The development of unmanned agricultural tractors (UAT) represents a significant step towards intelligent agricultural equipment. UAT technology is expected to lighten the workload of laborers and enhance the accuracy and efficiency of mechanized operations. Through the investigation of 123 relevant studies in the literature published in recent years, this article reviews three aspects of autonomous navigation technologies for UATs: perception, path planning and tracking, and motion control. The advantages and deficiencies of these technologies in the context of UATs are clarified by analyzing technical principles and the status of current research. We conduct summaries and analyses of existing unmanned navigation solutions for different application scenarios in order to identify current bottleneck issues. Based on the analysis of the applicability of autonomous navigation technologies in UATs, it can be seen that fruitful research progress has been achieved. The review also summarizes the common problems seen in current UAT technologies. The application of research to the sharing and integrating of multi-source data for autonomous navigation has so far been relatively weak. There is an urgent need for high-precision and high-stability sensing equipment. The universality of path planning methods and the efficiency and precision of path tracking need to be improved, and it is also necessary to develop highly reliable electrical control modules to enhance motion control performance. Overall, advanced sensors, high-performance intelligent algorithms, and reliable electrical control hardware are key factors in promoting the development of UAT technology.%
+    }
+    \verb{doi}
+    \verb 10.3390/machines12040218
+    \endverb
+    \field{issn}{2075-1702}
+    \field{number}{4}
+    \field{title}{Applications of Autonomous Navigation Technologies for Unmanned Agricultural Tractors: A Review}
+    \verb{url}
+    \verb https://www.mdpi.com/2075-1702/12/4/218
+    \endverb
+    \field{volume}{12}
+    \field{journaltitle}{Machines}
+    \field{year}{2024}
+  \endentry
+
+  \entry{rasshofer2011weather}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RRH}{%
+         family={Rasshofer},
+         familyi={R\bibinitperiod},
+         given={R.\bibnamedelima H.},
+         giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Spies},
+         familyi={S\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Spies},
+         familyi={S\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RRHSMSH1}
+    \strng{fullhash}{RRHSMSH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.5194/ars-9-49-2011
+    \endverb
+    \field{pages}{49\bibrangedash 60}
+    \field{title}{Influences of Weather Phenomena on Automotive Laser Radar Systems}
+    \field{volume}{9}
+    \field{journaltitle}{Advances in Radio Science}
+    \field{year}{2011}
+  \endentry
+
+  \entry{royo2019overview}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RS}{%
+         family={Royo},
+         familyi={R\bibinitperiod},
+         given={Santiago},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BGM}{%
+         family={Ballesta-Garcia},
+         familyi={B\bibinithyphendelim G\bibinitperiod},
+         given={Maria},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RSBGM1}
+    \strng{fullhash}{RSBGM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.3390/app9194093
+    \endverb
+    \field{number}{19}
+    \field{pages}{4093}
+    \field{title}{An Overview of Lidar Imaging Systems for Autonomous Vehicles}
+    \field{volume}{9}
+    \field{journaltitle}{Applied Sciences}
+    \field{year}{2019}
+  \endentry
+
+  \entry{apf_article}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SM}{%
+         family={Samodro},
+         familyi={S\bibinitperiod},
+         given={Maulana},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DR}{%
+         family={Dp},
+         familyi={D\bibinitperiod},
+         given={Riky},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=CW}{%
+         family={Caesarendra},
+         familyi={C\bibinitperiod},
+         given={Wahyu},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SMDRCW1}
+    \strng{fullhash}{SMDRCW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.31763/ijrcs.v3i2.944
+    \endverb
+    \field{pages}{161\bibrangedash 170}
+    \field{title}{Artificial Potential Field Path Planning Algorithm in Differential Drive Mobile Robot Platform for Dynamic Environment}
+    \field{volume}{3}
+    \field{journaltitle}{International Journal of Robotics and Control Systems}
+    \field{month}{03}
+    \field{year}{2023}
+  \endentry
+
+  \entry{SARANYA2016178}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SC}{%
+         family={Saranya},
+         familyi={S\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=UM}{%
+         family={Unnikrishnan},
+         familyi={U\bibinitperiod},
+         given={Manju},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ASA}{%
+         family={Ali},
+         familyi={A\bibinitperiod},
+         given={S.\bibnamedelima Akbar},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Sheela},
+         familyi={S\bibinitperiod},
+         given={D.S.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LDV}{%
+         family={Lalithambika},
+         familyi={L\bibinitperiod},
+         given={Dr.\bibnamedelima V.R.},
+         giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \keyw{Terrain based Path planning, D algorithm}
+    \strng{namehash}{SC+1}
+    \strng{fullhash}{SCUMASASDLDV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Path planning algorithms provide autonomy in mobile robots to reach targets even in unknown environments. Path planning using grid based techniques such as A* and D*, are cost function based, which is primarily a function of the distance to be travelled to reach the target. Robots targeted for outdoor environments should consider the terrain features also during path planning. In this paper, a modified approach of D* path planning algorithm is proposed. In addition to distance to be travelled, terrain slope estimate is also used in cost function computation to plan the path. The algorithm was simulated and tested with different terrain slopes. Results with different test scenarios are also brought out.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.ifacol.2016.03.049
+    \endverb
+    \field{issn}{2405-8963}
+    \field{note}{4th IFAC Conference on Advances in Control and Optimization of Dynamical Systems ACODS 2016}
+    \field{number}{1}
+    \field{pages}{178\bibrangedash 182}
+    \field{title}{Terrain Based D* Algorithm for Path Planning}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S2405896316300490
+    \endverb
+    \field{volume}{49}
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Serov2024ICARA}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SA}{%
+         family={Serov},
+         familyi={S\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Clemens},
+         familyi={C\bibinitperiod},
+         given={Joachim},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Schill},
+         familyi={S\bibinitperiod},
+         given={Kerstin},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SACJSK1}
+    \strng{fullhash}{SACJSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{2024 10th International Conference on Automation, Robotics and Applications (ICARA)}
+    \verb{doi}
+    \verb 10.1109/ICARA60736.2024.10553070
+    \endverb
+    \field{title}{Multi-Robot Graph SLAM Using LIDAR}
+    \list{location}{1}{%
+      {Athens, Greece}%
+    }
+    \field{year}{2024}
+  \endentry
+
+  \entry{9341176}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=ST}{%
+         family={Shan},
+         familyi={S\bibinitperiod},
+         given={Tixiao},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EB}{%
+         family={Englot},
+         familyi={E\bibinitperiod},
+         given={Brendan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Meyers},
+         familyi={M\bibinitperiod},
+         given={Drew},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WW}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Ratti},
+         familyi={R\bibinitperiod},
+         given={Carlo},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=RD}{%
+         family={Rus},
+         familyi={R\bibinitperiod},
+         given={Daniela},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{Laser radar;Smoothing methods;Three-dimensional displays;Real-time systems;Trajectory;Registers;Optimization}
+    \strng{namehash}{ST+1}
+    \strng{fullhash}{STEBMDWWRCRD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+    \verb{doi}
+    \verb 10.1109/IROS45743.2020.9341176
+    \endverb
+    \field{pages}{5135\bibrangedash 5142}
+    \field{title}{LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping}
+    \field{year}{2020}
+  \endentry
+
+  \entry{motion_deskewing_lidar}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=ST}{%
+         family={Shan},
+         familyi={S\bibinitperiod},
+         given={Tixiao},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EB}{%
+         family={Englot},
+         familyi={E\bibinitperiod},
+         given={Brendan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Meyers},
+         familyi={M\bibinitperiod},
+         given={Drew},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WW}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Ratti},
+         familyi={R\bibinitperiod},
+         given={Carlo},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=RD}{%
+         family={Rus},
+         familyi={R\bibinitperiod},
+         given={Daniela},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{ST+1}
+    \strng{fullhash}{STEBMDWWRCRD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+    \verb{doi}
+    \verb 10.1109/IROS45743.2020.9341176
+    \endverb
+    \field{pages}{5135\bibrangedash 5142}
+    \field{title}{{LIO-SAM}: Tightly-Coupled {Lidar} Inertial Odometry via Smoothing and Mapping}
+    \verb{url}
+    \verb https://arxiv.org/abs/2007.00258
+    \endverb
+    \field{year}{2020}
+  \endentry
+
+  \entry{rs13010069}{article}{}
+    \name{author}{6}{}{%
+      {{hash=SJ}{%
+         family={Szrek},
+         familyi={S\bibinitperiod},
+         given={Jarosław},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZR}{%
+         family={Zimroz},
+         familyi={Z\bibinitperiod},
+         given={Radoslaw},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wodecki},
+         familyi={W\bibinitperiod},
+         given={Jacek},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Michalak},
+         familyi={M\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Góralczyk},
+         familyi={G\bibinitperiod},
+         given={Mateusz},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WKM}{%
+         family={Worsa-Kozak},
+         familyi={W\bibinithyphendelim K\bibinitperiod},
+         given={Magdalena},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJ+1}
+    \strng{fullhash}{SJZRWJMAGMWKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Extraction of raw materials, especially in extremely harsh underground mine conditions, is irrevocably associated with high risk and probability of accidents. Natural hazards, the use of heavy-duty machines, and other technologies, even if all perfectly organized, may result in an accident. In such critical situations, rescue actions may require advanced technologies as autonomous mobile robot, various sensory system including gas detector, infrared thermography, image acquisition, advanced analytics, etc. In the paper, we describe several scenarios related to rescue action in underground mines with the assumption that searching for sufferers should be done considering potential hazards such as seismic, gas, high temperature, etc. Thus, possibilities of rescue team activities in such areas may be highly risky. This work reports the results of testing of a UGV robotic system in an underground mine developed in the frame of the AMICOS project. The system consists of UGV with a sensory system and image processing module that are based on an adaptation of You Only Look Once (YOLO) and Histogram of Oriented Gradients (HOG) algorithms. The experiment was very successful; human detection efficiency was very promising. Future work will be related to test the AMICOS technology in deep copper ore mines.%
+    }
+    \verb{doi}
+    \verb 10.3390/rs13010069
+    \endverb
+    \field{issn}{2072-4292}
+    \field{number}{1}
+    \field{title}{Application of the Infrared Thermography and Unmanned Ground Vehicle for Rescue Action Support in Underground Mine—The AMICOS Project}
+    \verb{url}
+    \verb https://www.mdpi.com/2072-4292/13/1/69
+    \endverb
+    \field{volume}{13}
+    \field{journaltitle}{Remote Sensing}
+    \field{year}{2021}
+  \endentry
+
+  \entry{mems_imu_calibration}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=TD}{%
+         family={Tedaldi},
+         familyi={T\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pretto},
+         familyi={P\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ME}{%
+         family={Menegatti},
+         familyi={M\bibinitperiod},
+         given={Emanuele},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{TDPAME1}
+    \strng{fullhash}{TDPAME1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{2014 IEEE International Conference on Robotics and Automation (ICRA)}
+    \verb{doi}
+    \verb 10.1109/ICRA.2014.6907297
+    \endverb
+    \field{pages}{3042\bibrangedash 3049}
+    \field{title}{A Robust and Easy to Implement Method for {IMU} Calibration without External Equipments}
+    \verb{url}
+    \verb https://albertopretto.altervista.org/papers/tpm_icra2014.pdf
+    \endverb
+    \field{year}{2014}
+  \endentry
+
+  \entry{teed2021droid}{article}{}
+    \name{author}{2}{}{%
+      {{hash=TZ}{%
+         family={Teed},
+         familyi={T\bibinitperiod},
+         given={Zachary},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Deng},
+         familyi={D\bibinitperiod},
+         given={Jia},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TZDJ1}
+    \strng{fullhash}{TZDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{{DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras}}
+    \field{journaltitle}{Advances in neural information processing systems}
+    \field{year}{2021}
+  \endentry
+
+  \entry{trivedi2024probabilistic}{misc}{}
+    \name{author}{6}{}{%
+      {{hash=TA}{%
+         family={Trivedi},
+         familyi={T\bibinitperiod},
+         given={Ananya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zolotas},
+         familyi={Z\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Abbas},
+         familyi={A\bibinitperiod},
+         given={Adeeb},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Prajapati},
+         familyi={P\bibinitperiod},
+         given={Sarvesh},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Bazzi},
+         familyi={B\bibinitperiod},
+         given={Salah},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PT}{%
+         family={Padır},
+         familyi={P\bibinitperiod},
+         given={Taskın},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TA+1}
+    \strng{fullhash}{TAZMAAPSBSPT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{eprint}
+    \verb 2402.18065
+    \endverb
+    \field{title}{A Probabilistic Motion Model for Skid-Steer Wheeled Mobile Robot Navigation on Off-Road Terrains}
+    \verb{url}
+    \verb https://arxiv.org/abs/2402.18065
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2024}
+  \endentry
+
+  \entry{prm_article}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=VJ}{%
+         family={Velagic},
+         familyi={V\bibinitperiod},
+         given={Jasmin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Delimustafic},
+         familyi={D\bibinitperiod},
+         given={Dada},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=OD}{%
+         family={Osmankovic},
+         familyi={O\bibinitperiod},
+         given={Dinko},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VJDDOD1}
+    \strng{fullhash}{VJDDOD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \verb{doi}
+    \verb 10.1109/ISIE.2014.6864789
+    \endverb
+    \field{title}{Mobile Robot Navigation System Based on Probabilistic Road Map (PRM) with Halton Sampling of Configuration Space}
+    \field{journaltitle}{IEEE International Symposium on Industrial Electronics}
+    \field{month}{06}
+    \field{year}{2014}
+  \endentry
+
+  \entry{app14209511}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WH}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Haixia},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Shihao},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=YT}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WHWSYT1}
+    \strng{fullhash}{WHWSYT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    The conventional Ant Colony Optimization (ACO) algorithm, applied to logistics robot path planning in a two-dimensional grid environment, encounters several challenges: slow convergence rate, susceptibility to local optima, and an excessive number of turning points in the planned paths. To address these limitations, an improved ant colony algorithm has been developed. First, the heuristic function is enhanced by incorporating artificial potential field (APF) attraction, which introduces the influence of the target point’s attraction on the heuristic function. This modification accelerates convergence and improves the optimization performance of the algorithm. Second, an additional pheromone increment, calculated from the difference in pheromone levels between the best and worst paths of the previous generation, is introduced during the pheromone update process. This adjustment adaptively enhances the path length optimality. Lastly, a triangle pruning method is applied to eliminate unnecessary turning points, reducing the number of turns the logistics robot must execute and ensuring a more direct and efficient path. To validate the effectiveness of the improved algorithm, extensive simulation experiments were conducted in two grid-based environments of varying complexity. Several performance indicators were utilized to compare the conventional ACO algorithm, a previously improved version, and the newly proposed algorithm. MATLAB simulation results demonstrated that the improved ant colony algorithm significantly outperforms the other methods in terms of path length, number of iterations, and the reduction of inflection points, confirming its superiority in logistics robot path planning.%
+    }
+    \verb{doi}
+    \verb 10.3390/app14209511
+    \endverb
+    \field{issn}{2076-3417}
+    \field{number}{20}
+    \field{title}{Path Planning of Inspection Robot Based on Improved Ant Colony Algorithm}
+    \verb{url}
+    \verb https://www.mdpi.com/2076-3417/14/20/9511
+    \endverb
+    \field{volume}{14}
+    \field{journaltitle}{Applied Sciences}
+    \field{year}{2024}
+  \endentry
+
+  \entry{drones8090419}{article}{}
+    \name{author}{6}{}{%
+      {{hash=WN}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Nan},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiang},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Suo},
+         familyi={S\bibinitperiod},
+         given={Zhe},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Fan},
+         familyi={F\bibinitperiod},
+         given={Jiuchen},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Jixin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=XD}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Dongxuan},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WN+1}
+    \strng{fullhash}{WNLXSZFJWJXD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    Autonomous vehicles play a crucial role in three-dimensional transportation systems and have been extensively investigated and implemented in mining and other fields. However, the diverse and intricate terrain characteristics present challenges to vehicle traversability, including complex geometric features such as slope, harsh physical parameters such as friction and roughness, and irregular obstacles. The current research on traversability analysis primarily emphasizes the processing of perceptual information, with limited consideration for vehicle performance and state parameters, thereby restricting their applicability in path planning. A framework of traversability analysis and path planning methods for autonomous wheeled vehicles on rigid terrains is proposed in this paper for better traversability costs and less redundancy in path planning. The traversability boundary conditions are established first based on terrain and vehicle characteristics using theoretical methods to determine the traversable areas. Then, the traversability cost map for the traversable areas is obtained through simulation and segmented linear regression analysis. Afterward, the TV-Hybrid A* algorithm is proposed by redefining the path cost functions of the Hybrid A* algorithm through the simulation data and neural network method to generate a more cost-effective path. Finally, the path generated by the TV-Hybrid A* algorithm is validated and compared with that of the A* and Hybrid A* algorithms in simulations, demonstrating a slightly better traversability cost for the former.%
+    }
+    \verb{doi}
+    \verb 10.3390/drones8090419
+    \endverb
+    \field{issn}{2504-446X}
+    \field{number}{9}
+    \field{title}{Traversability Analysis and Path Planning for Autonomous Wheeled Vehicles on Rigid Terrains}
+    \verb{url}
+    \verb https://www.mdpi.com/2504-446X/8/9/419
+    \endverb
+    \field{volume}{8}
+    \field{journaltitle}{Drones}
+    \field{year}{2024}
+  \endentry
+
+  \entry{Wei2025FusionPortableV2}{article}{}
+    \name{author}{10}{}{%
+      {{hash=WH}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={Hexiang},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=JJ}{%
+         family={Jiao},
+         familyi={J\bibinitperiod},
+         given={Jianhao},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HX}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Xiangcheng},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=YJ}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Jingwen},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=XX}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Xupeng},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Jin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZY}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Yilong},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Yuxuan},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WL}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Lujia},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Ming},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WH+1}
+    \strng{fullhash}{WHJJHXYJXXWJZYLYWLLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1177/02783649241303525
+    \endverb
+    \field{number}{7}
+    \field{pages}{1093\bibrangedash 1116}
+    \field{title}{{FusionPortableV2}: A Unified Multi-Sensor Dataset for Generalized {SLAM} Across Diverse Platforms and Scalable Environments}
+    \field{volume}{44}
+    \field{journaltitle}{The International Journal of Robotics Research}
+    \field{year}{2025}
+  \endentry
+
+  \entry{rb3_welch2006}{report}{}
+    \name{author}{2}{}{%
+      {{hash=WG}{%
+         family={Welch},
+         familyi={W\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Bishop},
+         familyi={B\bibinitperiod},
+         given={Gary},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WGBG1}
+    \strng{fullhash}{WGBG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{TR 95-041}
+    \field{title}{An Introduction to the {Kalman} Filter}
+    \verb{url}
+    \verb https://d1.amobbs.com/bbs_upload782111/files_35/ourdev_611838G0F5Z1.p
+    \verb df
+    \endverb
+    \list{institution}{1}{%
+      {Department of Computer Science, University of North Carolina at Chapel Hill}%
+    }
+    \field{type}{techreport}
+    \field{year}{2006}
+  \endentry
+
+  \entry{xu2021fastlio2}{misc}{}
+    \name{author}{5}{}{%
+      {{hash=XW}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CY}{%
+         family={Cai},
+         familyi={C\bibinitperiod},
+         given={Yixi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Dongjiao},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Jiarong},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Fu},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XW+1}
+    \strng{fullhash}{XWCYHDLJZF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \verb{doi}
+    \verb 10.48550/arXiv.2107.06829
+    \endverb
+    \verb{eprint}
+    \verb 2107.06829
+    \endverb
+    \field{title}{FAST-LIO2: Fast Direct LiDAR-inertial Odometry}
+    \verb{url}
+    \verb https://arxiv.org/abs/2107.06829
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.RO}
+    \field{year}{2021}
+  \endentry
+
+  \entry{lidar_inertial_odometry_tight_coupled}{article}{}
+    \name{author}{5}{}{%
+      {{hash=XW}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CY}{%
+         family={Cai},
+         familyi={C\bibinitperiod},
+         given={Yixi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Dongjiao},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Jiarong},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Fu},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XW+1}
+    \strng{fullhash}{XWCYHDLJZF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \verb{doi}
+    \verb 10.1109/TRO.2022.3141876
+    \endverb
+    \field{number}{4}
+    \field{pages}{2053\bibrangedash 2073}
+    \field{title}{{FAST-LIO2}: Fast Direct {LiDAR}-Inertial Odometry}
+    \verb{url}
+    \verb https://arxiv.org/abs/2107.06829
+    \endverb
+    \field{volume}{38}
+    \field{journaltitle}{IEEE Transactions on Robotics}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Xu2020FASTLIOAF}{article}{}
+    \name{author}{2}{}{%
+      {{hash=XW}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Fu},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XWZF1}
+    \strng{fullhash}{XWZF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{pages}{3317\bibrangedash 3324}
+    \field{title}{FAST-LIO: A Fast, Robust LiDAR-Inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter}
+    \verb{url}
+    \verb https://api.semanticscholar.org/CorpusID:223953478
+    \endverb
+    \field{volume}{6}
+    \field{journaltitle}{IEEE Robotics and Automation Letters}
+    \field{year}{2020}
+  \endentry
+
+  \entry{f13111952}{article}{}
+    \name{author}{3}{}{%
+      {{hash=XY}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Yiqing},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Jiaming},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Fuquan},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XYLJZF1}
+    \strng{fullhash}{XYLJZF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{abstract}{%
+    The application of UAVs in forest fire monitoring has attracted increasing attention. When a UAV carries out forest fire monitoring cruises in a large area of the forest, one of the main problems is planning an appropriate cruise path so that the UAV can start from the starting point, cruise the entire area with little detour, and return to the initial position within its maximum cruise distance. In this paper, we propose a flight path planning method for UAV forest fire monitoring based on a forest fire risk map. According to the forest fire risk level, the method uses the ring self-organizing mapping (RSOM) algorithm to plan a corresponding flight path. In addition, since it is difficult for a single UAV to complete a single full-path cruise task in a large area within its maximum cruise time, a multi-UAV cruise scheme is proposed. First, the Gaussian mixture clustering algorithm is used to cluster the study area and divide it into several subareas. In combination with the RSOM algorithm, the corresponding path is planned for each UAV. A simulation with an actual dataset showed that the proposed method solves the problem of UAV patrol path planning for forest fire monitoring and can complete the task within a reasonable time.%
+    }
+    \verb{doi}
+    \verb 10.3390/f13111952
+    \endverb
+    \field{issn}{1999-4907}
+    \field{number}{11}
+    \field{title}{A UAV-Based Forest Fire Patrol Path Planning Strategy}
+    \verb{url}
+    \verb https://www.mdpi.com/1999-4907/13/11/1952
+    \endverb
+    \field{volume}{13}
+    \field{journaltitle}{Forests}
+    \field{year}{2022}
+  \endentry
+
+  \entry{astar_article}{article}{}
+    \name{author}{1}{}{%
+      {{hash=YY}{%
+         family={Yan},
+         familyi={Y\bibinitperiod},
+         given={Yumeng},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YY1}
+    \strng{fullhash}{YY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \verb{doi}
+    \verb 10.54097/hset.v46i.7697
+    \endverb
+    \field{pages}{154\bibrangedash 161}
+    \field{title}{Research on the A Star Algorithm for Finding Shortest Path}
+    \field{volume}{46}
+    \field{journaltitle}{Highlights in Science, Engineering and Technology}
+    \field{month}{04}
+    \field{year}{2023}
+  \endentry
+
+  \entry{ZANG2025114055}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZZ}{%
+         family={Zang},
+         familyi={Z\bibinitperiod},
+         given={Zheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=GX}{%
+         family={Gong},
+         familyi={G\bibinitperiod},
+         given={Xiaojie},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZX}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Xi},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gong},
+         familyi={G\bibinitperiod},
+         given={Jianwei},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Autonomous ground vehicles, Coordinated path planning, Safe driving corridor, Off-road environments}
+    \strng{namehash}{ZZ+1}
+    \strng{fullhash}{ZZGXZXGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{abstract}{%
+    Generating safe, smooth, and efficient path is a fundamental and difficult task for autonomous ground vehicles (AGVs) in off-road environments with 3D rigid terrain and obstacles. In this paper, a coordinated path planning approach is proposed to deal with the influence of off-road terrains and obstacles systematically for the path planning of AGVs. The proposed approach consists of integrated traversable area assessment (ITAA) layer and path planning and path optimization (PPPO) layer. In the ITAA layer, a hierarchical map model is established to solve the problem of difficult off-road terrain evaluation in path planning. Based on the hierarchical map, we evaluated the slope, maximum height difference, and roughness of the off-road terrain. In addition, we also model the vehicle’s motion capabilities on off-road roads, including off-road vehicle pose estimation, longitudinal stability analysis, and static stability analysis. For the PPPO layer, a reference path generation method considering terrain is proposed to generate a passable reference path that meets the vehicle’s kinematic constraints and static stability requirements. Based on the generated reference path, a path optimization method based on a differential flat model is proposed to generate the optimal path, where a safe driving corridor method is established to ensure the safety of the vehicle. Finally, the proposed coordinated path planning approach is validated in both simulations and real-vehicle, and experimental results demonstrate that the proposed system can plan a feasible path fast with the constraints from vehicle kinematics, obstacle avoidance and off-road terrains.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.knosys.2025.114055
+    \endverb
+    \field{issn}{0950-7051}
+    \field{pages}{114055}
+    \field{title}{Coordinated path planning for autonomous ground vehicles in off-Road environments with 3D rigid terrain and obstacles}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0950705125011001
+    \endverb
+    \field{volume}{326}
+    \field{journaltitle}{Knowledge-Based Systems}
+    \field{year}{2025}
+  \endentry
+
+  \entry{milit_10239710}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=ZC}{%
+         family={Zhai},
+         familyi={Z\bibinitperiod},
+         given={Chenggong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ZP}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Pinghua},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=XH}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Hongsi},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=YX}{%
+         family={Yuan},
+         familyi={Y\bibinitperiod},
+         given={Xingguang},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZL}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Liyong},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Rangming},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \keyw{Industries;Service robots;Planets;Weapons;Oceans;Military robotics;Robots;military robots;US military;intelligence;future warfare}
+    \strng{namehash}{ZC+1}
+    \strng{fullhash}{ZCZPXHYXZLWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{2023 8th Asia-Pacific Conference on Intelligent Robot Systems (ACIRS)}
+    \verb{doi}
+    \verb 10.1109/ACIRS58671.2023.10239710
+    \endverb
+    \field{pages}{24\bibrangedash 28}
+    \field{title}{The Application and Inspiration of Robots in the US Military}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Zhang2023AdverseWeather}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZY}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Yuxiao},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Carballo},
+         familyi={C\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=YH}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Hanting},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Takeda},
+         familyi={T\bibinitperiod},
+         given={Kazuya},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZY+1}
+    \strng{fullhash}{ZYCAYHTK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \verb{doi}
+    \verb 10.1016/j.isprsjprs.2022.12.021
+    \endverb
+    \field{pages}{146\bibrangedash 177}
+    \field{title}{Perception and Sensing for Autonomous Vehicles Under Adverse Weather Conditions: A Survey}
+    \field{volume}{196}
+    \field{journaltitle}{ISPRS Journal of Photogrammetry and Remote Sensing}
+    \field{year}{2023}
   \endentry
 \enddatalist
 \endinput

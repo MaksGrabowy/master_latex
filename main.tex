@@ -322,7 +322,7 @@
 
 % Tutaj proszę umieszczać swoje pakiety, makra, ustawienia itd.
 
-
+\setlength{\headheight}{15.5pt}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % listingi i fragmentu kodu źródłowego 
@@ -523,35 +523,392 @@ escapeinside=@@,%
 \chapter{Wprowadzenie}
 
 \section{Wstęp i motywacja}
-Obserwując trendy i tendencje w rozwoju systemów autonomicznych na przestrzeni ostatnich lat można zauważyć, że jest to aktualnie jedna z najbardziej prężnie rozwijających się dziedzin automatyki i robotyki \cite{trends_11299247}. Powodem jest to, że obiekty autonomiczne przestały być domeną wyłącznie zamkniętych laboratoriów badawczych i coraz powszechniej znajdują zastosowanie w rzeczywistych scenariuszach aplikacyjnych, takich jak logistyka, rolnictwo precyzyjne, misje poszukiwawczo-ratownicze czy eksploracja kosmosu. 
+W ostatnich latach obserwuje się dynamiczny rozwój systemów autonomicznych. Roboty mobilne, wykorzystywane wcześniej głównie w laboratoriach badawczych i kontrolowanych środowiskach przemysłowych, coraz częściej realizują zadania w rolnictwie, ratownictwie, górnictwie oraz podczas eksploracji obszarów trudno dostępnych~\cite{trends_11299247}.
 
 % W ostatnich latach obserwuje się bezprecedensowy i niezwykle dynamiczny rozwój systemów autonomicznych. Roboty mobilne przestały być domeną wyłącznie zamkniętych laboratoriów badawczych i coraz powszechniej znajdują zastosowanie w rzeczywistych scenariuszach aplikacyjnych, takich jak logistyka, rolnictwo precyzyjne, misje poszukiwawczo-ratownicze czy eksploracja kosmosu. 
 
-Duża część robotów mobilnych, szczególnie w dziedzinie intralogistyki, porusza się tylko i wyłącznie w tzw. środowiskach ustrukturyzowanych - na płaskich posadzkach hal magazynowych czy produkcyjnych, gdzie warunki oświetleniowe są stałe, a trasy przejazdu przewidywalne. Zasadniczym problemem w robotyce mobilnej pozostaje jednak nawigacja w środowiskach nieustrukturyzowanych i terenowych jako uniwersalne narzędzie dla pojazdów o różnym układzie kinematycznym. Nierówności podłoża, dynamicznie pojawiacjące się przeszkody oraz brak punktów odniesienia sprawiają że standardowe metody lokalizacji i planowania ruchu stają się niewystarczające.
+Duża część robotów mobilnych, szczególnie w dziedzinie intralogistyki, porusza się tylko i wyłącznie w tak zwanych środowiskach ustrukturyzowanych - na płaskich posadzkach hal magazynowych czy produkcyjnych, gdzie warunki oświetleniowe są stałe, a trasy przejazdu przewidywalne. Zasadniczym problemem w robotyce mobilnej pozostaje jednak nawigacja w środowiskach nieustrukturyzowanych i terenowych jako uniwersalne narzędzie dla pojazdów o różnym układzie kinematycznym. Nierówności podłoża, dynamicznie pojawiacjące się przeszkody oraz brak punktów odniesienia sprawiają że standardowe metody lokalizacji i planowania ruchu stają się niewystarczające.
 
 % Większość komercyjnych rozwiązań klasy AMR (Autonomous Mobile Robots) doskonale radzi sobie w tzw. środowiskach ustrukturyzowanych -- na płaskich posadzkach hal magazynowych czy produkcyjnych, gdzie warunki oświetleniowe są stałe, a trasy przejazdu przewidywalne. Zasadniczym problemem i aktualnym wąskim gardłem rozwoju robotyki mobilnej pozostaje jednak nawigacja w środowiskach nieustrukturyzowanych i terenowych. Nierówności podłoża, zmienne warunki atmosferyczne, dynamicznie pojawiające się przeszkody o nieregularnych kształtach oraz brak infrastruktury referencyjnej sprawiają, że standardowe metody lokalizacji i planowania ścieżki stają się niewystarczające.
 
-
+Aby robot mógł skutecznie operować w takich warunkach, niezbędne jest wyposażenie go w zaawansowane systemy percepcji zdolne do fuzji danych z wielu źródeł. Właściwa interpretacja tych danych w czasie rzeczywistym jest kluczowa dla bezpiecznego planowania ruchu. Ponadto, rosnąca złożoność algorytmów wymusza stosowanie nowoczesnych, rozproszonych architektur oprogramowania. Z tego względu, motywacją do podjęcia niniejszej pracy jest potrzeba opracowania niezawodnego systemu autonomii dla platformy mobilnej operującej w terenie, z wykorzystaniem nowoczesnego ekosystemu ROS2, który wyznacza obecnie standardy w rozwoju robotyki.
 
 % Aby robot mógł skutecznie operować w takich warunkach, niezbędne jest wyposażenie go w zaawansowane systemy percepcji zdolne do fuzji danych z wielu modalności (np. skanerów LIDAR, kamer głębi oraz systemów inercyjnych IMU). Właściwa interpretacja tych danych w czasie rzeczywistym jest kluczowa dla bezpiecznego planowania ruchu. Ponadto, rosnąca złożoność algorytmów wymusza stosowanie nowoczesnych, rozproszonych architektur oprogramowania. Z tego względu, motywacją do podjęcia niniejszej pracy jest potrzeba opracowania niezawodnego systemu autonomii dla platformy mobilnej operującej w terenie, z wykorzystaniem nowoczesnego ekosystemu ROS2, który wyznacza obecnie standardy w rozwoju zaawansowanej robotyki.
 \section{Cel i zakres pracy}
 
+Głównym celem pracy jest zaprojektowanie, implementacja i weryfikacja modułowego systemu percepcji i nawigacji przeznaczonego dla robotów mobilnych operujących w środowisku terenowym. Przenośność rozwiązania zweryfikowano z wykorzystaniem platform o odmiennej konstrukcji i sposobie poruszania się.
+
+Osiągnięcie postawionego celu wymagało rozwiązania szeregu problemów natury algorytmicznej oraz integracyjnej. Z tego względu, w zakres zrealizowanych prac wchodzą następujące zadania:
+\begin{itemize}
+    \item Opracowanie wirtualnego modelu kinematycznego robota oraz zdefiniowanie charakterystyk jego systemów percepcyjnych w symulatorze środowiskowym Gazebo.
+    \item Przygotowanie zróżnicowanych scenariuszy testowych w postaci modeli środowisk terenowych uwzględniających nierówności podłoża oraz przeszkody naturalne.
+    \item Implementacja mechanizmów fuzji danych z czujników zamontowanych na robocie.
+    \item Konfiguracja i uruchomienie algorytmów jednoczesnego mapowania i lokalizacji w przestrzeni trójwymiarowej.
+    \item Zaprojektowanie stosu nawigacyjnego w systemie ROS2, odpowiedzialnego za globalne i lokalne planowanie ruchu pojazdu z uwzględnieniem trójwymiarowej geometrii otoczenia oraz dynamicznego omijania przeszkód.
+    \item Przeprowadzenie badań weryfikujących poprawność i skuteczność zaproponowanych rozwiązań.
+\end{itemize}
+
+Praca została podzielona na 9 rozdziałów. Po niniejszym wprowadzeniu, w rozdziale drugim omówiono ramy teoretyczne... [tu w przyszłości krótko opiszę strukturę pracy].
+
+% \chapter{Przegląd literatury}
+% \section{Systemy percepcji w robotyce terenowej}
+% \section{Metody lokalizacji i mapowania}
+% \section{Metody nawigacji}
+% \section{Zależności pomiędzy kinematyką robota a nawigacją}
+
 \chapter{Przegląd literatury}
+
+\section{Robotyka mobilna w zastosowaniach terenowych}
+Znaczna część współczesnych wdrożeń dotyczy środowisk terenowych, w których roboty mobilne realizują zadania o podwyższonym stopniu ryzyka lub wymagające dużej precyzji w trudnych warunkach. Do głównych obszarów ich wykorzystania należą:
+\begin{itemize}
+    \item \textbf{Rolnictwo precyzyjne} - autonomiczne ciągniki i platformy monitorujące uprawy~\cite{machines12040218},
+    \item \textbf{Leśnictwo} - bezzałogowe statki powietrzne (UAV) i platformy lądowe wykrywające zalążki pożarów~\cite{f13111952},
+    \item \textbf{Przemysł wydobywczy} - roboty inspekcyjne monitorujące skład atmosfery oraz stabilność wyrobisk w kopalniach~\cite{rs13010069},
+    \item \textbf{Ratownictwo (Search and Rescue)} - platformy wspomagające poszukiwania w obszarach dotkniętych katastrofami naturalnymi~\cite{DONG2025103457},
+    \item \textbf{Obronność} - taktyczne roboty wsparcia i platformy patrolowe~\cite{milit_10239710},
+    \item \textbf{Eksploracja kosmiczna} - łaziki planetarne operujące w warunkach całkowitego braku infrastruktury.
+\end{itemize}
+
+Środowiska terenowe definiowane są jako obszary wysoce nieustrukturyzowane. Oznacza to brak założeń upraszczających, takich jak obecność płaskich posadzek, prostopadłych ścian czy jednoznacznych linii krawędziowych, na których opierają się systemy intralogistyczne. Nawigacja w takich warunkach jest dodatkowo utrudniona przez zmienne czynniki środowiskowe (kurz, mgła, deszcz) oraz drastyczne wahania oświetlenia, prowadzące do degradacji danych sensorycznych. Przykładowo, gęsty pył wzbijany przez koła platformy mobilnej może być błędnie interpretowany przez skanery laserowe jako fizyczna przeszkoda, podczas gdy silne nasłonecznienie doprowadza do prześwietlenia matryc kamer, uniemożliwiając poprawną ekstrakcję cech terenu. Wymusza to stosowanie zaawansowanych i redundantnych systemów percepcji.
+
 \section{Systemy percepcji w robotyce terenowej}
+Skuteczna nawigacja w terenie opiera się na integracji komplementarnych technologii sensorycznych. Klasyczne podejścia, bazujące wyłącznie na odometrii kół, ulegają w terenie szybkiej degradacji na skutek poślizgów na luźnym lub grząskim podłożu~\cite{epton2007odometry}. W związku z tym, współczesne systemy autonomiczne integrują dane pozyskiwane z sensorów otoczenia (LIDAR, systemy wizyjne, GNSS) z pomiarami stanu wewnętrznego robota (IMU).
+
+% Fundamentem precyzyjnego mapowania trójwymiarowego są obecnie systemy LIDAR (Light Detection and Ranging). Generują one gęste chmury punktów odzwierciedlające geometrię otoczenia poprzez pomiar czasu przelotu dużej ilości impulsów laserowych na sekundę. W nawigacji terenowej czujniki te są niezastąpione z uwagi na niewrażliwość na brak oświetlenia zewnętrznego oraz wysoką rozdzielczość przestrzenną, pozwalającą na detekcję drobnych przeszkód. Podatność wiązki lasera na rozpraszanie przez zjawiska atmosferyczne (np. rzęsisty deszcz) stanowi jednak ich główne ograniczenie~\cite{robotnik_autonomous_navigation}.
+
+% Rozwiązania wizyjne, w tym kamery monokularowe, stereoskopowe oraz RGB-D, dostarczają z kolei krytycznych informacji o fotometrii i teksturze otoczenia, niezbędnych do klasyfikacji semantycznej. Nowoczesnym uzupełnieniem tej grupy są sensory Time-of-Flight (ToF). Działają one na zasadzie aktywnego pomiaru dystansu dla całej matrycy pikseli jednocześnie, generując mapy głębi o wysokiej częstotliwości odświeżania. Technologia ToF jest szczególnie przydatna w nawigacji bliskiego zasięgu (lokalnym unikaniu przeszkód), ponieważ dostarcza bezwzględnych wartości metrycznych, eliminując charakterystyczny dla czystej wizji komputerowej problem niejednoznaczności skali (scale ambiguity)~\cite{mrdvs_autonomous_navigation, tofsensors_mapless_navigation}.
+
+% Kluczowym elementem spajającym system percepcji są jednostki inercyjne (ang. IMU-Inertial Measurment Unit), dostarczające informacji o przyśpieszeniach liniowych i prędkościach kątowych. W warunkach terenowych IMU umożliwia estymację chwilowej orientacji przestrzennej platformy, kompensując zniekształcenia skanów (motion skew) wynikające z gwałtownych przemieszczeń na nierównościach. Ścisłe sprzężenie danych ze skanera laserowego i modułu inercyjnego (tzw. Lidar-Inertial Odometry) gwarantuje utrzymanie ciągłości estymacji pozy nawet w przypadku przejściowego braku wyraźnych cech geometrycznych w otoczeniu~\cite{Xu2020FASTLIOAF}.
+
+
+Analiza dostępnych rozwiązań wskazuje, że systemy percepcji robotów terenowych są najczęściej projektowane jako układy wielosensorowe. Poszczególne źródła danych nie są traktowane jako rozwiązania konkurencyjne, lecz jako wzajemnie uzupełniające się elementy systemu. Skanery laserowe wykorzystywane są przede wszystkim do odwzorowania geometrii otoczenia i dopasowywania kolejnych skanów, jednostki inercyjne zapewniają pomiary ruchu o wysokiej częstotliwości, natomiast systemy wizyjne dostarczają informacji fotometrycznych i semantycznych. Pomiary GNSS mogą dodatkowo ograniczać długookresowy dryft estymacji w środowiskach otwartych. Szczególnie istotną grupę stanowią systemy odometrii laserowo-inercyjnej, w których dane z IMU wykorzystywane są do predykcji ruchu i kompensacji zniekształceń chmury punktów, natomiast pomiary skanera ograniczają narastanie błędów estymacji~\cite{Xu2020FASTLIOAF}.
+
+Zestaw wykorzystywanych czujników powinien być dobierany z uwzględnieniem warunków pracy robota. Kamery są podatne na zmiany oświetlenia, skanery laserowe na rozpraszanie promieniowania przez opady i pył, GNSS może być niedostępny w pobliżu zabudowań lub pod koronami drzew, a estymacja oparta wyłącznie na IMU podlega szybkiemu dryftowi. Z tego względu w literaturze dotyczącej robotyki terenowej dominuje podejście oparte na fuzji danych, którego celem jest wykorzystanie komplementarnych właściwości poszczególnych modalności sensorycznych~\cite{Wei2025FusionPortableV2,Zhang2023AdverseWeather,Beuchert2023RawGNSSFusion}.
+
 \section{Metody lokalizacji i mapowania}
+
+Jednym z podstawowych problemów robotyki mobilnej jest jednoczesna lokalizacja i budowanie mapy (SLAM, ang. \textit{Simultaneous Localization and Mapping}). Zadaniem systemu SLAM jest estymacja trajektorii robota przy równoczesnym tworzeniu reprezentacji nieznanego wcześniej otoczenia. W ujęciu probabilistycznym zarówno stan robota, jak i elementy mapy traktowane są jako zmienne losowe estymowane na podstawie kolejnych pomiarów i modelu ruchu~\cite{SLAM_article}.
+
+Współczesne systemy SLAM można porównywać według kilku niezależnych kryteriów. Pierwszym z nich jest metoda estymacji stanu:
+
+\begin{itemize}
+    \item \textbf{Metody oparte na filtracji} wykorzystują między innymi rozszerzone, iterowane lub bezśladowe filtry Kalmana. Pomiary są przetwarzane sekwencyjnie w etapach predykcji i aktualizacji stanu. Podejście to umożliwia estymację wykonywaną z dużą częstotliwością, jednak jego dokładność zależy od poprawności modeli ruchu, pomiarów i szumów. Przykładem jest FAST-LIO2, który realizuje ścisłą integrację pomiarów LiDAR-u i IMU z wykorzystaniem iterowanego filtru Kalmana oraz rejestruje surowe punkty bezpośrednio względem mapy utrzymywanej w strukturze \textit{ikd-Tree}~\cite{xu2021fastlio2}. FAST-LIO2 należy jednak traktować przede wszystkim jako system odometrii laserowo-inercyjnej i lokalnego mapowania, ponieważ jego podstawowa wersja nie zawiera mechanizmu globalnego domykania pętli.
+
+    \item \textbf{Metody oparte na optymalizacji grafowej} przedstawiają problem estymacji w postaci grafu czynników. Zmiennymi grafu mogą być pozy robota, prędkości, błędy systematyczne IMU oraz parametry elementów mapy. Czynniki opisują natomiast zależności wynikające z pomiarów odometrycznych, inercyjnych, satelitarnych, dopasowania skanów lub detekcji zamknięcia pętli. Optymalizacja grafu umożliwia uwzględnienie pomiarów pochodzących z różnych chwil i korygowanie wcześniej wyznaczonej trajektorii. Mechanizm ten ogranicza skumulowany dryft i zwiększa globalną spójność mapy, szczególnie po wykryciu zamknięcia pętli.
+\end{itemize}
+
+Niezależnym kryterium klasyfikacji jest sposób integracji danych sensorycznych. W systemach luźno powiązanych (ang. \textit{loosely coupled}) wyniki działania oddzielnych estymatorów, na przykład odometrii LiDAR-owej i odbiornika GNSS, są łączone na poziomie wyznaczonych pozycji lub prędkości. W systemach ściśle powiązanych (ang. \textit{tightly coupled}) pomiary z różnych czujników są uwzględniane w ramach wspólnego problemu estymacji stanu. Pozwala to zachować większą część informacji zawartej w pomiarach, lecz zwiększa złożoność obliczeniową oraz wymagania dotyczące kalibracji i synchronizacji.
+
+Przykładem systemu ściśle integrującego dane jest LIO-SAM. Wykorzystuje on preintegrację pomiarów IMU do kompensacji zniekształcenia chmury punktów i predykcji ruchu, natomiast więzy pochodzące z odometrii LiDAR-owej, IMU, GNSS i zamknięć pętli wprowadzane są do grafu czynników. Optymalizacja inkrementalna realizowana za pomocą iSAM2 umożliwia estymację trajektorii i budowanie mapy w czasie rzeczywistym~\cite{9341176}.
+
+Odrębny podział dotyczy architektury systemu. MRG-SLAM jest zdecentralizowanym systemem wielorobotowym rozwijającym rozwiązania znane z pakietu \textit{hdl-graph-slam}. Każdy robot utrzymuje własny graf pozy, a wymiana informacji pomiędzy robotami umożliwia wykrywanie międzyrobotowych zamknięć pętli i łączenie lokalnych map~\cite{Serov2024ICARA}.
+
+MOLA (ang. \textit{Modular Optimization framework for Localization and mApping}) reprezentuje podejście modułowe. Framework dzieli system lokalizacji i mapowania na wymienne komponenty odpowiedzialne między innymi za obsługę sensorów, generowanie obserwacji, utrzymywanie reprezentacji świata oraz optymalizację. Architektura umożliwia stosowanie różnych reprezentacji stanu i mapy oraz integrację heterogenicznych źródeł pomiarów. Przewidziano w niej również mechanizm czasowego usuwania z pamięci operacyjnej fragmentów mapy, które nie są aktualnie wykorzystywane, co ogranicza zapotrzebowanie na pamięć podczas pracy na rozległych obszarach~\cite{Blanco_Claraco_RSS_19,blanco2025mola_lo}.
+
+Metody wykorzystujące uczenie maszynowe nie stanowią rozłącznej kategorii względem filtracji i optymalizacji grafowej. Modele uczone mogą zastępować lub wspomagać wybrane elementy systemu, takie jak wyznaczanie korespondencji, estymacja głębi, ekstrakcja cech lub odrzucanie obserwacji dynamicznych. Przykładem jest DROID-SLAM, w którym sieć rekurencyjna iteracyjnie aktualizuje estymaty pozy kamery i głębi pikselowej, współpracując z różniczkowalną warstwą gęstej optymalizacji \textit{bundle adjustment}~\cite{teed2021droid}. Rozszerzenie mapy geometrycznej o etykiety obiektów i rodzajów powierzchni jest natomiast zadaniem semantycznego SLAM-u i wymaga dodatkowego modułu segmentacji lub klasyfikacji.
+
+
 \section{Metody nawigacji}
-\section{Zależności pomiędzy kinematyką robota a nawigacją}
+
+Ocena przejezdności terenu (ang. \textit{traversability analysis}) jest istotnym elementem nawigacji robotów terenowych. Jej celem jest określenie, czy dany fragment środowiska może zostać bezpiecznie pokonany przez konkretną platformę mobilną. Ocena może uwzględniać geometrię terenu, między innymi nachylenie, nierówność i wysokość przeszkód, a także właściwości powierzchni, ograniczenia kinematyczne oraz stateczność robota. Wynik analizy jest często odwzorowywany na mapie kosztów, na której wartości komórek reprezentują względny koszt lub ryzyko przejazdu przez dany obszar~\cite{drones8090419}.
+
+Szczególnym wyzwaniem w środowisku terenowym jest rozróżnienie przeszkód nieprzejezdnych, takich jak pnie drzew i głazy, od roślinności, która może ugiąć się pod naciskiem robota. Skaner laserowy rejestruje punkty należące zarówno do obiektów sztywnych, jak i do trawy lub zarośli, dlatego analiza oparta wyłącznie na geometrii może prowadzić do zaklasyfikowania przejezdnej roślinności jako przeszkody. Informacje geometryczne są z tego względu uzupełniane segmentacją semantyczną obrazów lub chmur punktów. Sama etykieta semantyczna nie określa jednak bezpośrednio właściwości mechanicznych podłoża, dlatego może być dodatkowo łączona z informacją o wcześniejszych przejazdach lub reakcjach układu jezdnego.
+
+Do segmentacji semantycznej środowisk nieustrukturyzowanych wykorzystuje się zarówno konwolucyjne sieci neuronowe, jak i architektury oparte na transformatorach wizyjnych. Mechanizmy uwagi umożliwiają modelowanie zależności pomiędzy odległymi obszarami obrazu, dzięki czemu wybrane modele ViT osiągają wysoką jakość segmentacji terenu. Nie można jednak mówić o jednoznacznym odejściu od sieci CNN, ponieważ uzyskiwane wyniki zależą od zbioru danych, architektury i sposobu uczenia, a istotnymi kryteriami w robotyce pozostają również czas inferencji i zapotrzebowanie na pamięć~\cite{li2023transformer}.
+
+Alternatywnym kierunkiem są metody uczące ocenę przejezdności na podstawie wcześniejszych doświadczeń robota. De Miguel i współautorzy zaproponowali rozwiązanie wykorzystujące wielowarstwową mapę zawierającą informacje o wysokości i teksturze terenu. Dane zbierane podczas początkowego przejazdu sterowanego przez operatora są przekształcane przez wariacyjny autoenkoder do postaci wektorów cech, a następnie grupowane za pomocą algorytmu BIRCH. Podczas autonomicznej pracy podobieństwo nowych obserwacji do utworzonych klastrów służy do wyznaczania oceny przejezdności. Metoda ogranicza konieczność przygotowywania semantycznie etykietowanych danych dla każdego nowego środowiska i może aktualizować reprezentację przejezdnego terenu na podstawie kolejnych przejazdów~\cite{demiguel2025iilearnexperiencebased}.
+
+
+\subsection{Algorytmy planowania ruchu}
+Planowanie ruchu w terenie stanowi rozszerzenie nawigacji płaskiej o dodatkowe stopnie swobody i ograniczenia wynikające z ukształtowania podłoża (analiza 2.5D lub 3D). Jest to proces hierarchiczny, składający się z planera globalnego (wyznaczającego optymalną trasę na mapie o dużym zasięgu) oraz planera lokalnego (odpowiedzialnego za dynamiczne omijanie przeszkód i wyliczanie zadanych prędkości dla układu napędowego w pętli sterowania o wysokiej częstotliwości)~\cite{ZANG2025114055}. 
+
+W literaturze wyróżnia się cztery główne rodziny algorytmów planowania:
+\begin{itemize}
+    \item \textbf{Metody przeszukiwania grafów} - bazujące na dyskretyzacji przestrzeni roboczej (np. siatki zajętości). Problem nawigacji sprowadza się tu do wyznaczenia najkrótszej ścieżki w grafie. Najpopularniejsze rozwiązania to algorytm Dijkstry~\cite{javid_article}, jego zoptymalizowana heurystycznie wersja A*~\cite{astar_article} oraz wariant D* (Dynamic A*), przystosowany do środowisk zmiennych, umożliwiający wdyajną zmianę trasy bez konieczności przeliczania całego grafu~\cite{SARANYA2016178}.
+    \item \textbf{Metody probabilistyczne} - dedykowane dla wielowymiarowych przestrzeni konfiguracyjnych. Zamiast budować pełną siatkę, wykorzystują losowe próbkowanie. Należą do nich algorytmy PRM (Probabilistic Roadmaps), skuteczne w środowiskach statycznych~\cite{prm_article}, oraz struktury drzewiaste RRT (Rapidly-exploring Random Trees) i ich asymptotycznie optymalny wariant RRT*, które charakteryzują się wysoką efektywnością w szybkim odnajdywaniu bezkolizyjnych ścieżek w złożonych przestrzeniach topologicznych~\cite{rrt_article, rrtstar_article}.
+    \item \textbf{Pola potencjałowe (Artificial Potential Fields - APF)} - metoda reaktywna, w której robot zachowuje się jak cząstka w polu sił fizycznych. Punkt docelowy generuje siłę przyciągającą, a przeszkody siłę odpychającą. Jest to rozwiązanie wysoce wydajne obliczeniowo, idealne dla planerów lokalnych, jednak podatne na blokowanie się algorytmu w minimach lokalnych~\cite{apf_article}.
+    \item \textbf{Algorytmy bioinspirowane} - optymalizacyjne metody heurystyczne stosowane przy wielokryterialnych funkcjach kosztu (np. minimalizacja czasu przejazdu z jednoczesnym unikaniem ostrych pochyłości). Obejmują one algorytmy genetyczne (GA)~\cite{GUO2019106467, GRIFFITHS1997485} oraz metody optymalizacji mrówkowej (ACO), które poprzez naśladowanie mechanizmu feromonów skutecznie adaptują się do zmian w analizowanym terenie~\cite{app14209511}.
+\end{itemize}
+\section{Nowoczesne architektury oprogramowania w robotyce}
+Wraz ze wzrostem złożoności algorytmów percepcji, planowania i sterowania, oprogramowanie robotów mobilnych wyewoluowało z architektur monolitycznych w stronę systemów rozproszonych. Współczesne systemy autonomiczne wymagają integracji wielu niezależnych procesów działających równolegle, co wymusiło zastosowanie specjalistycznego oprogramowania pośredniczącego.
+
+Zdecydowanym standardem akademickim stał się system ROS (Robot Operating System). Jego pierwsza generacja (ROS1) znacząco przyspieszyła rozwój robotyki, jednak posiadała ograniczenia dyskwalifikujące ją z zastosowań krytycznych i terenowych~\cite{Ros2InNutshell}. Głównymi wadami ROS1 były:
+\begin{itemize}
+    \item Scentralizowana architektura polegająca na jednym głównym brokerze (roscore) odpowiedzialnym za komunikację pomiędzy węzłami.
+    \item Brak wbudowanego wsparcia dla architektur wykorzystujących wiele robotów.
+    \item Brak wsparcia dla systemów czasu rzeczywistego.
+    \item Brak wsparcia dla profili jakości usług (QoS - Quality of Service) - niezbędnego dla systemów krytycznych.
+\end{itemize}
+% -- przede wszystkim brak wsparcia dla systemów czasu rzeczywistego (real-time) oraz zależność od centralnego węzła zarządzającego (tzw. \textit{roscore}), którego awaria prowadziła do zatrzymania całej platformy. 
+
+Odpowiedzią na te problemy jest ROS2, który całkowicie przebudował warstwę komunikacyjną, opierając ją na przemysłowym standardzie DDS (Data Distribution Service)~\cite{ros2DDS}. Standard ten wprowadził architekturę w pełni rozproszoną, opartą na mechanizmie publikacji i subskrypcji bez centralnego punktu awarii. Kluczową innowacją dla robotyki terenowej, wprowadzoną w ROS 2, jest QoS. Pozwala to one na precyzyjne zarządzanie niezawodnością komunikacji, na przykład gwarantując dostarczenie krytycznych komend sterujących napędem, przy jednoczesnym akceptowaniu gubienia pojedynczych, przestarzałych wiadomości z chmurą punktów czujnika LIDAR w przypadku przeciążenia sieci pokładowej.
+
+\subsection{Paradygmat Drzew Zachowań}
+Wraz z ewolucją warstwy komunikacyjnej, zmianie uległ również sposób modelowania samej autonomii. Historycznie, zadania nawigacyjne opierano na maszynach stanów skończonych (FSM - Finite State Machines). Mimo intuicyjności dla prostych zadań, maszyny stanów stają się niezarządzalne przy złożonych zachowaniach wymagających reakcji na setki możliwych błędów i dynamicznych zmian w otoczeniu (zjawisko \textit{state explosion}).
+
+Nowoczesne frameworki nawigacyjne, takie jak stos Nav2 w środowisku ROS 2~\cite{macenski2020marathon2}, opierają się na Drzewach Zachowań (Behavior Trees - BT). Architektura ta, wywodząca się początkowo z branży gier komputerowych, charakteryzuje się hierarchiczną i w pełni modularną strukturą. Drzewa Zachowań pozwalają na łatwe tworzenie sekwencji zadań z wbudowanymi mechanizmami przywracania sprawności (recovery behaviors). Dzięki nim robot poruszający się w trudnym terenie może w sposób płynny i deterministyczny przerywać aktualnie wykonywane zadanie (np. jazdę do celu) na rzecz zachowania nadrzędnego (np. awaryjnego zatrzymania lub próby wyjechania z pułapki), a następnie powrócić do pierwotnego planu bez konieczności resetowania całego systemu.
+
 
 \chapter{Wstęp teoretyczny}
-\section{Podstawy kinematyki robotów}
-\section{Technologie sensoryczne w robotyce}
+\section{Przestrzenny model kinematyczny}
+Tradycyjny model kinematyczny dla napędu różnicowego zakłada ruch platformy po płaskiej płaszczyźnie (2D). Jednakże dla robota terenowego operującego w nieustrukturyzowanym środowisku o zmiennym ukształtowaniu (wzniesienia, spadki, nierówności), konieczne jest rozszerzenie modelu do sześciu stopni swobody.
+
+W przestrzeni trójwymiarowej stan robota opisany jest wektorem pozy $q$, zawierającym pozycję w globalnym układzie odniesienia $\{G\}$ oraz orientację przestrzenną wyrażoną za pomocą kątów Eulera:
+\[q = [x, y, z, \phi, \theta, \psi]^T\]
+gdzie:
+\begin{itemize}
+    \item $x, y, z$ - współrzędne środka układu lokalnego robota $\{R\}$ w układzie globalnym $\{G\}$,
+    \item $\phi$ (roll) - kąt przechylenia (obrót wokół lokalnej osi X),
+    \item $\theta$ (pitch) - kąt pochylenia (obrót wokół lokalnej osi Y),
+    \item $\psi$ (yaw) - kąt odchylenia (obrót wokół globalnej osi Z).
+\end{itemize}
+
+Wykorzystana w niniejszej pracy platforma [TODO: referencja rozdziału] charakteryzuje się napędem na cztery koła, dla którego zaimplementowano sterowanie burtowe (skid-steering). Z teoretycznego punktu widzenia, idealny model kinematyczny takiej platformy sprowadza się do modelu klasycznego napędu różnicowego (differential drive). W takim układzie zakłada się, że ruch platformy realizowany jest poprzez różnicowanie prędkości kół lewej i prawej strony pojazdu~\cite{dudek2008inertial}.
+
+Układ kinematyczny sterowania burtowego generuje prędkości wyłącznie w płaszczyźnie lokalnej robota. Na podstawie obrotów kół, platforma wymusza wzdłużną prędkość liniową $v$ (wzdłuż osi X) oraz prędkość obrotową $\omega$ (wokół osi Z). W wyidealizowanym modelu z brakiem poślizgu poprzecznego, lokalny wektor prędkości robota wynosi $V_R = [v, 0, 0]^T$.
+
+Aby wyznaczyć transformację pozycji robota w przestrzeni trójwymiarowej, należy rzutować prędkość lokalną na układ globalny przy użyciu macierzy obrotu $R_R^G(\phi, \theta, \psi)$:
+\[
+\begin{bmatrix} \dot{x} \\ \dot{y} \\ \dot{z} \end{bmatrix} = R_R^G(\phi, \theta, \psi) \begin{bmatrix} v \\ 0 \\ 0 \end{bmatrix}
+\]
+
+Po wymnożeniu przez pełną macierz obrotu, różniczkowe równania ruchu pojazdu (przy założeniu zgodności z konwencją lotniczą) przyjmują postać:
+\[\dot{x} = v \cos(\theta) \cos(\psi)\]
+\[\dot{y} = v \cos(\theta) \sin(\psi)\]
+\[\dot{z} = -v \sin(\theta)\]
+
+Powyższe równania wyraźnie pokazują, że w środowisku terenowym wzdłużna prędkość $v$ generowana przez koła napędowe rozkłada się na wszystkie trzy osie układu globalnego. Kąty przechyłu ($\phi$) i pochylenia ($\theta$) w tym modelu nie są stopniami swobody bezpośrednio sterowanymi przez napędy robota. Stanowią one ograniczenia wymuszane fizycznie przez geometrię podłoża, z którym stykają się koła platformy. Zmiana wysokości ($\dot{z}$) zależy wprost od kąta pochylenia robota $\theta$ w danym momencie.
+
+Również pochodna kąta odchylenia (yaw rate w układzie globalnym) jest sprzężona z kątami przechyłu i pochylenia. W ogólnym przypadku terenowym, relacja między zadaną przez koła prędkością obrotową $\omega$ a globalną zmianą kątów Eulera wymaga przemnożenia przez macierz transformacji prędkości kątowych, co stanowi istotne utrudnienie dla algorytmów odometrii zliczanej (dead reckoning).
+
+\subsection{Ograniczenia modeli kinematycznych w środowisku terenowym}
+Przedstawiony idealny model kinematyczny stanowi fundament dla działania niskopoziomowych sterowników silników, pozwalając na zamianę żądanych prędkości robota na obroty poszczególnych kół. Należy jednak stanowczo podkreślić, że w środowisku terenowym, wykorzystanie tego modelu do estymacji pozycji robota jest obarczone krytycznymi błędami. 
+
+Współczesne badania nad platformami o sterowaniu burtowym dowodzą, że czysto analityczne modele kinematyczne ulegają szybkiej degradacji, szczególnie podczas wykonywania manewrów skrętu przy wyższych prędkościach. Wynika to z faktu, że roboty tego typu z natury swojej mechaniki wymagają fizycznego poślizgu kół do zmiany orientacji. W nieustrukturyzowanym terenie o zmiennym współczynniku tarcia (np. mokra trawa, błoto, piasek), ignorowanie nieliniowych zjawisk na styku opony z podłożem prowadzi do drastycznego wzrostu błędów w estymacji kątowej i liniowej~\cite{trivedi2024probabilistic}.
+
+Dodatkowo, zjawisko to jest potęgowane przez przestrzenną naturę terenu. Pokonywanie wzniesień i nierówności wywołuje ruch w osiach pionowych, co przy zastosowaniu płaskiego modelu 2D skutkuje fałszywą interpretacją przebytej drogi. 
+
+Z powyższych względów, analityczny model odometrii kół jest całkowicie niewystarczający jako samodzielne źródło informacji o pozycji dla robotów terenowych. W najnowszych rozwiązaniach odchodzi się od prób stworzenia idealnego modelu matematycznego opony w terenie, na rzecz zaawansowanych algorytmów uczenia maszynowego (np. procesów gaussowskich) lub głębokiej fuzji sensorycznej. W niniejszej pracy przyjęto podejście, w którym błędy modelu kinematycznego są na bieżąco kompensowane przez systemy inercyjne oraz algorytmy dopasowywania skanów z czujników LIDAR.
+
+\section{Technologie sensoryczne w robotyce terenowej}
+Percepcja otoczenia stanowi krytyczny element systemów autonomicznych. W warunkach terenowych, gdzie tradycyjne modele kinematyczne zawodzą z powodu zmiennej interakcji kół z podłożem, niezawodna nawigacja wymaga zastosowania komplementarnych technologii sensorycznych. Czujniki te dzieli się na dwie główne grupy: ekstroceptywne (mierzące parametry środowiska zewnętrznego, np. skanery laserowe, kamery) oraz proprioceptywne (mierzące stan wewnętrzny robota, np. jednostki inercyjne)~\cite{mi15040531}.
+
+\subsection{Skanery laserowe}
+
+Skanery laserowe LiDAR (ang. \textit{Light Detection and Ranging}) są aktywnymi czujnikami optycznymi służącymi do bezpośredniego wyznaczania odległości do elementów otoczenia. Czujnik emituje promieniowanie laserowe, rejestruje sygnał powracający po odbiciu od powierzchni a następnie łączy zmierzoną odległość z kierunkiem emisji wiązki. Powtarzanie tego procesu dla kolejnych kierunków pozwala odtworzyć geometrię otoczenia w postaci skanu dwuwymiarowego albo trójwymiarowej chmury punktów. Ponieważ skaner jest źródłem wykorzystywanego promieniowania, jego działanie nie wymaga oświetlenia sceny światłem widzialnym. Nie oznacza to jednak całkowitej niezależności od warunków oświetleniowych, ponieważ silne promieniowanie słoneczne może zwiększać poziom sygnału tła docierającego do detektora \cite{behroozpour2017lidar}.
+
+Najczęściej stosowaną w robotyce mobilnej metodą pomiaru odległości jest bezpośredni pomiar czasu przelotu impulsu (ang. \textit{direct Time of Flight}, dToF). Krótki impuls laserowy zostaje wysłany w kierunku otoczenia, a układ pomiarowy wyznacza czas $\Delta t$ pomiędzy jego emisją i rejestracją sygnału powrotnego. Odległość $d$ od powierzchni odbijającej jest określona zależnością
+
+\begin{equation}
+    d = \frac{c_m \Delta t}{2},
+    \label{eq:lidar_tof}
+\end{equation}
+
+gdzie $c_m$ oznacza prędkość światła w ośrodku, w którym propaguje się wiązka. Współczynnik $1/2$ wynika z uwzględnienia drogi impulsu od emitera do obiektu oraz z powrotem do detektora. Rozdzielczość czasowa układu pomiarowego bezpośrednio wpływa zatem na rozdzielczość wyznaczanej odległości. Oprócz metody dToF stosowane są również rozwiązania wykorzystujące pomiar przesunięcia fazowego fali modulowanej oraz technikę FMCW (ang. \textit{Frequency-Modulated Continuous Wave}). W skanerach FMCW odległość jest wyznaczana na podstawie różnicy częstotliwości sygnału nadawanego i odbieranego, co umożliwia także pomiar prędkości radialnej obiektu. Rozwiązania impulsowe pozostają jednak powszechne w skanerach wykorzystywanych do mapowania i nawigacji robotów mobilnych \cite{behroozpour2017lidar,royo2019overview}.
+
+Skanery laserowe można klasyfikować według kilku niezależnych kryteriów. Ze względu na wymiar odwzorowywanej przestrzeni wyróżnia się:
+
+\begin{itemize}
+    \item \textbf{skanery 2D} - kierujące wiązkę w obrębie jednej płaszczyzny i zwracające zbiór pomiarów $[d_i,\alpha_i]$, gdzie $d_i$ jest odległością, a $\alpha_i$ kątem skanowania.
+    \item \textbf{skanery 3D} - wykonujące pomiary dla wielu wartości azymutu (kątu skanowania) i elewacji, dzięki czemu bezpośrednio odwzorowują przestrzenną geometrię otoczenia.
+\end{itemize}
+
+Wymiar danych nie określa sposobu kierowania wiązką. Przykładowo, wielokanałowy skaner 3D może wykorzystywać zestaw emiterów ustawionych pod stałymi kątami elewacji oraz wspólny ruch obrotowy w osi pionowej. Ze względu na konstrukcję układu skanującego można natomiast wyróżnić następujące grupy urządzeń \cite{royo2019overview}:
+
+\begin{itemize}
+    \item \textbf{skanery mechaniczne} - wykorzystujące obrót całej głowicy lub elementu układu optycznego. Konstrukcje tego typu zapewniają zazwyczaj szerokie pole widzenia i regularny wzór próbkowania, lecz zawierają części ruchome narażone na zużycie i oddziaływanie drgań.
+    \item \textbf{skanery hybrydowe, określane także jako quasi-solid-state} - wykorzystujące miniaturowe elementy ruchome, na przykład zwierciadła MEMS. Umożliwiają zmniejszenie rozmiaru urządzenia, ale ich pole widzenia jest zwykle węższe niż w przypadku skanerów obrotowych, a rozkład punktów może zależeć od przebiegu sterującego zwierciadłem.
+    \item \textbf{skanery półprzewodnikowe (solid-state)} - pozbawione mechanicznie poruszanych elementów układu skanującego. Do tej grupy należą między innymi czujniki typu \textit{flash}, oświetlające jednocześnie całe pole widzenia, oraz układy z optyczną anteną fazowaną (OPA), w których kierunek wiązki jest sterowany elektronicznie. Brak części ruchomych zwiększa odporność mechaniczną, lecz parametry zasięgu, rozdzielczości kątowej i pola widzenia zależą od zastosowanej architektury.
+\end{itemize}
+
+W przypadku skanera 3D pojedynczy pomiar można opisać odległością $d_i$, kątem skanowania $\alpha_i$ oraz kątem elewacji $\beta_i$. Współrzędne punktu w układzie związanym ze skanerem $\{S\}$ wyznaczane są wówczas następująco:
+
+\begin{equation}
+    \mathbf{p}^{S}_i =
+    \begin{bmatrix}
+        d_i\cos\beta_i\cos\alpha_i \\
+        d_i\cos\beta_i\sin\alpha_i \\
+        d_i\sin\beta_i
+    \end{bmatrix}.
+    \label{eq:lidar_spherical_to_cartesian}
+\end{equation}
+
+Zbiór punktów $\mathcal{P}=\{\mathbf{p}^{S}_i\}_{i=1}^{N}$ tworzy chmurę punktów jednego skanu. Wiadomość pomiarowa może zawierać również intensywność sygnału powrotnego, numer kanału, znacznik czasu oraz informację o kolejności odbicia. Intensywność nie jest bezpośrednią miarą współczynnika odbicia powierzchni, ponieważ zależy między innymi od odległości, kąta padania wiązki, właściwości materiału i charakterystyki odbiornika. Przed wykorzystaniem danych przez algorytmy nawigacji punkty przekształca się z układu skanera do układu robota albo mapy:
+
+\begin{equation}
+    \mathbf{p}^{B}_i = \mathbf{R}^{B}_{S}\mathbf{p}^{S}_i + \mathbf{t}^{B}_{S},
+    \label{eq:lidar_extrinsic_transform}
+\end{equation}
+
+gdzie $\mathbf{R}^{B}_{S}$ oraz $\mathbf{t}^{B}_{S}$ opisują parametry kalibracji zewnętrznej skanera względem układu bazowego robota $\{B\}$. Dokładność tej transformacji oraz synchronizacja czasowa czujników mają bezpośredni wpływ na zgodność kolejnych skanów.
+
+Do podstawowych parametrów skanera należą: minimalny i maksymalny zasięg, dokładność oraz powtarzalność pomiaru odległości, poziome i pionowe pole widzenia, rozdzielczość kątowa, częstotliwość skanowania, liczba generowanych punktów w jednostce czasu oraz liczba rejestrowanych odbić. Parametry te należy analizować łącznie. Zwiększenie liczby punktów nie musi prowadzić do poprawy odwzorowania terenu, jeżeli pole widzenia skanera nie obejmuje podłoża bezpośrednio przed robotem albo rozkład kątów elewacji pozostawia pomiędzy warstwami znaczne odstępy.
+
+Jakość danych jest zależna również od właściwości obserwowanej powierzchni. Materiały o małym współczynniku odbicia mogą ograniczać zasięg pomiaru, natomiast powierzchnie szklane, silnie połyskliwe lub obserwowane pod dużym kątem padania mogą prowadzić do braku pomiaru, odbić wielodrogowych albo wyznaczenia nieprawidłowej odległości. Mgła, deszcz, śnieg i pył powodują rozpraszanie oraz tłumienie wiązki, co zmniejsza zasięg użyteczny i może generować punkty nieodpowiadające trwałym elementom otoczenia \cite{rasshofer2011weather}.
+
+Istotnym źródłem błędu na platformie mobilnej jest także zniekształcenie ruchowe skanu. Punkty jednego obrotu nie są rejestrowane w tej samej chwili, a robot może w czasie ich akwizycji zmieniać pozycję i orientację. Traktowanie całej chmury jako pomiaru wykonanego dla jednej pozy robota prowadzi do zniekształcenia geometrii, szczególnie podczas szybkiego ruchu lub przejazdu po nierównościach. Kompensację tego zjawiska, określaną jako \textit{deskewing}, realizuje się z wykorzystaniem znaczników czasu punktów i estymaty ruchu pochodzącej najczęściej z jednostki IMU, odometrii albo bieżącego wyniku estymatora stanu~\cite{motion_deskewing_lidar}.
+
+W systemach autonomicznych chmury punktów są wykorzystywane między innymi do dopasowywania kolejnych skanów, estymacji ruchu, budowy mapy, segmentacji podłoża oraz detekcji przeszkód. Skaner 3D dostarcza informacji metrycznej przydatnej w środowisku terenowym zarówno w dzień, jak i w nocy, jednak nie stanowi samodzielnie niezawodnego źródła pełnej informacji o stanie robota. Obszary o małej liczbie cech geometrycznych, zakłócenia atmosferyczne i zniekształcenia ruchowe uzasadniają integrację danych laserowych z pomiarami IMU, GNSS i systemów wizyjnych. Taka komplementarność czujników stanowi podstawę systemu percepcji opracowanego w niniejszej pracy.
+
+
+\subsection{Kamery głębi oparte na pomiarze czasu przelotu (ToF)}
+
+Uzupełnieniem skanerów laserowych są matrycowe kamery głębi ToF (ang. \textit{Time of Flight}). Są to aktywne czujniki optyczne, które oświetlają obserwowaną scenę promieniowaniem podczerwonym, a następnie wyznaczają odległość oddzielnie dla każdego piksela matrycy. W przeciwieństwie do skanerów mechanicznych nie wymagają sekwencyjnego kierowania pojedynczej wiązki w kolejne punkty przestrzeni, dzięki czemu umożliwiają jednoczesne pozyskanie informacji o głębi w całym polu widzenia~\cite{solid_state_tof_cameras}.
+
+W kamerach tego typu najczęściej stosowany jest pośredni pomiar czasu przelotu (iToF, ang. \textit{indirect Time of Flight}). Emitowane promieniowanie jest modulowane amplitudowo, a odległość wyznaczana jest na podstawie przesunięcia fazowego $\Delta\varphi$ pomiędzy sygnałem wyemitowanym i odebranym:
+
+\begin{equation}
+    d = \frac{c}{4\pi f_m}\Delta\varphi,
+    \label{eq:itof_distance}
+\end{equation}
+
+gdzie $c$ oznacza prędkość światła w ośrodku, a $f_m$ jest częstotliwością modulacji~\cite{itof_phase_shift}. Ze względu na okresowość pomiaru fazy jednoznaczny zakres pomiarowy jest ograniczony, dlatego w praktycznych rozwiązaniach mogą być wykorzystywane różne częstotliwości modulacji.
+
+Wynikiem działania kamery jest mapa głębi, w której każdemu pikselowi przypisana jest zmierzona odległość. Czujnik może dostarczać również obraz amplitudy lub mapę jakości pomiaru, ułatwiającą odrzucanie punktów o małej wiarygodności~\cite{tof_confidence_filtering}. Kamery ToF charakteryzują się gęstym odwzorowaniem przestrzeni i dużą częstotliwością odświeżania, dlatego znajdują zastosowanie w detekcji przeszkód w bliskim otoczeniu robota. Ich ograniczeniami są stosunkowo niewielki zasięg oraz podatność na silne promieniowanie słoneczne, odbicia wielodrogowe i właściwości optyczne obserwowanych powierzchni.
+
+\subsection{Inercyjne jednostki pomiarowe (IMU)}
+
+Inercyjna jednostka pomiarowa (IMU, ang. \textit{Inertial Measurement Unit}) jest czujnikiem proprioceptywnym dostarczającym informacji o ruchu platformy. Współczesne układy IMU realizowane są najczęściej w technologii mikroukładów elektromechanicznych MEMS (ang. \textit{Microelectromechanical Systems}). Typowy układ o sześciu osiach pomiarowych, określany często jako IMU 6-DoF, składa się z trójosiowego akcelerometru oraz trójosiowego żyroskopu~\cite{mems_imu_calibration}. Niektóre moduły zawierają dodatkowo magnetometr, wykorzystywany do estymacji orientacji względem ziemskiego pola magnetycznego.
+
+Żyroskop mierzy prędkość kątową, natomiast akcelerometr nie wyznacza bezpośrednio przyspieszenia liniowego obiektu w układzie globalnym. Jego pomiarem jest tak zwana siła właściwa, czyli różnica pomiędzy przyspieszeniem kinematycznym i przyspieszeniem grawitacyjnym, wyrażona w układzie współrzędnych czujnika. Model pomiarowy akcelerometru można zapisać jako
+
+\begin{equation}
+    \widetilde{\mathbf{a}}^{I}
+    =
+    \mathbf{R}^{I}_{W}
+    \left(
+        \mathbf{a}^{W} - \mathbf{g}^{W}
+    \right)
+    +
+    \mathbf{b}_{a}
+    +
+    \mathbf{n}_{a},
+    \label{eq:imu_accelerometer_model}
+\end{equation}
+
+gdzie $\widetilde{\mathbf{a}}^{I}$ jest wektorem zmierzonym przez akcelerometr w układzie IMU $\{I\}$, $\mathbf{a}^{W}$ oznacza rzeczywiste przyspieszenie liniowe w układzie globalnym $\{W\}$, $\mathbf{g}^{W}$ jest wektorem przyspieszenia grawitacyjnego, a $\mathbf{R}^{I}_{W}$ opisuje obrót z układu globalnego do układu czujnika. Wektory $\mathbf{b}_{a}$ oraz $\mathbf{n}_{a}$ reprezentują odpowiednio błąd systematyczny i szum pomiarowy.
+
+Model pomiarowy żyroskopu ma postać
+
+\begin{equation}
+    \widetilde{\boldsymbol{\omega}}^{I}
+    =
+    \boldsymbol{\omega}^{I}
+    +
+    \mathbf{b}_{g}
+    +
+    \mathbf{n}_{g},
+    \label{eq:imu_gyroscope_model}
+\end{equation}
+
+gdzie $\widetilde{\boldsymbol{\omega}}^{I}$ jest zmierzoną prędkością kątową, $\boldsymbol{\omega}^{I}$ jej wartością rzeczywistą wyrażoną w układzie IMU, natomiast $\mathbf{b}_{g}$ i $\mathbf{n}_{g}$ oznaczają błąd systematyczny oraz szum żyroskopu~\cite{imu_noise_modeling}.
+
+Błędy $\mathbf{b}_{a}$ i $\mathbf{b}_{g}$ nie są w praktyce stałe. Ich wartości zmieniają się między innymi pod wpływem temperatury i czasu pracy układu. W estymatorach stanu często modeluje się je jako procesy błądzenia losowego:
+
+\begin{equation}
+    \dot{\mathbf{b}}_{a} = \mathbf{n}_{ba},
+    \qquad
+    \dot{\mathbf{b}}_{g} = \mathbf{n}_{bg},
+    \label{eq:imu_bias_random_walk}
+\end{equation}
+
+gdzie $\mathbf{n}_{ba}$ i $\mathbf{n}_{bg}$ są szumami opisującymi zmianę błędów systematycznych. Bardziej rozbudowane modele mogą uwzględniać również błędy skali, nieprostopadłość osi pomiarowych oraz wpływ temperatury.
+
+W przypadku nieruchomego czujnika żyroskop powinien wskazywać wartości bliskie zeru. Akcelerometr nie wskazuje jednak zerowego wektora, ponieważ rejestruje siłę właściwą związaną z oddziaływaniem grawitacji. Dla nieruchomego i wypoziomowanego czujnika wartość bezwzględna jego wektora pomiarowego powinna wynosić w przybliżeniu $9.81\,\mathrm{m/s^2}$. Właściwa interpretacja tego pomiaru wymaga znajomości orientacji czujnika względem układu globalnego.
+
+Prędkość kątowa z żyroskopu jest całkowana w celu aktualizacji orientacji platformy, reprezentowanej najczęściej za pomocą kwaternionu lub macierzy obrotu. Po skompensowaniu błędu systematycznego i grawitacji pomiary akcelerometru mogą być wykorzystane do wyznaczenia prędkości oraz pozycji:
+
+\begin{equation}
+    \dot{\mathbf{v}}^{W}
+    =
+    \mathbf{R}^{W}_{I}
+    \left(
+        \widetilde{\mathbf{a}}^{I} - \mathbf{b}_{a}
+    \right)
+    +
+    \mathbf{g}^{W},
+    \qquad
+    \dot{\mathbf{p}}^{W} = \mathbf{v}^{W}.
+    \label{eq:imu_state_propagation}
+\end{equation}
+
+Całkowanie powoduje narastanie błędów estymacji. Stały błąd akcelerometru prowadzi do liniowego wzrostu błędu prędkości i kwadratowego wzrostu błędu pozycji. Błąd żyroskopu powoduje natomiast nieprawidłową estymację orientacji, a w konsekwencji również błędne odjęcie składowej grawitacyjnej od pomiarów akcelerometru. Z tego względu samodzielna nawigacja inercyjna wykorzystująca czujniki klasy MEMS zachowuje dokładność jedynie w ograniczonym przedziale czasu.
+
+Jednostki IMU generują pomiary zazwyczaj z częstotliwością wyższą niż skanery laserowe, dzięki czemu mogą być wykorzystywane do predykcji ruchu pomiędzy kolejnymi skanami. W algorytmach odometrii laserowo-inercyjnej dane inercyjne służą do propagacji stanu robota, natomiast dopasowanie chmur punktów ogranicza narastający dryft. Integracja może być realizowana za pomocą filtrów Kalmana lub optymalizacji grafu czynników~\cite{lidar_inertial_odometry_tight_coupled,motion_deskewing_lidar}.
+
+Dokładność fuzji danych zależy nie tylko od parametrów samych czujników, ale również od synchronizacji czasowej oraz kalibracji transformacji pomiędzy układami współrzędnych IMU i skanera. Nawet niewielkie przesunięcie czasowe lub błąd orientacji pomiędzy czujnikami może prowadzić do nieprawidłowej kompensacji ruchu i pogorszenia jakości dopasowania chmur punktów.
+
+% 3.3
 \section{Teoria estymacji stanu i fuzji danych sensorycznych}
+Estymacja stanu polega na wyznaczaniu wielkości opisujących ruch robota na podstawie niepełnych i obarczonych błędami pomiarów. W przypadku pojazdu terenowego pomiar obrotów kół nie pozwala jednoznacznie odtworzyć przemieszczenia, a całkowanie sygnałów z czujnika IMU prowadzi do narastania błędu. Ponieważ obserwacje są obarczone szumem, wynik estymacji powinien być rozpatrywany wraz z jego niepewnością.
+
+Fuzja danych sensorycznych umożliwia wykorzystanie uzupełniających się informacji pochodzących z różnych źródeł (czujników). Pomiary IMU pozwalają przewidywać zmiany ruchu pomiędzy kolejnymi skanami, natomiast obserwacje laserowe dostarczają informacji o geometrii otoczenia ograniczających dryf. Integrację tych informacji można realizować za pomocą filtracji, jak w metodzie FAST-LIO, lub optymalizacji grafu czynników, jak w LIO-SAM~\cite{Xu2020FASTLIOAF,9341176}.
+
+Niepewność wyniku estymacji opisuje się między innymi za pomocą macierzy kowariancji. Dla wektora błędu $\mathbf{e}_k$ o zerowej wartości oczekiwanej ma ona postać
+\begin{equation}
+    \mathbf{P}_k =
+    \mathbb{E}\!\left[\mathbf{e}_k\mathbf{e}_k^{\mathsf T}\right].
+    \label{eq:zalazek_kowariancja}
+\end{equation}
+Elementy diagonalne określają wariancje poszczególnych składowych błędu, a pozostałe elementy opisują ich wzajemne zależności. Kowariancja umożliwia więc ilościowe określenie niepewności estymaty oraz uwzględnienie jej podczas łączenia informacji z różnych źródeł~\cite{rb3_barfoot2017}.
+
+Rozszerzony filtr Kalmana (EKF, ang. \textit{Extended Kalman Filter}) służy do estymacji stanu układów opisanych modelami nieliniowymi. Jego działanie obejmuje dwa etapy: predykcję i korekcję. W predykcji model ruchu pozwala przewidzieć kolejny stan oraz jego niepewność. Po otrzymaniu pomiaru estymata jest korygowana na podstawie różnicy pomiędzy obserwacją a wartością przewidywaną przez model pomiarowy. Podstawowy schemat tych operacji, dla wektorowego opisu stanu, można zapisać jako
+\begin{align}
+    \widehat{\mathbf{x}}_k^{-}
+    &= f\!\left(\widehat{\mathbf{x}}_{k-1}^{+},\mathbf{u}_k\right),
+    \label{eq:zalazek_ekf_predykcja}\\
+    \widehat{\mathbf{x}}_k^{+}
+    &= \widehat{\mathbf{x}}_k^{-}
+    +\mathbf{K}_k\left[
+    \mathbf{z}_k-h\!\left(\widehat{\mathbf{x}}_k^{-}\right)\right],
+    \label{eq:zalazek_ekf_korekcja}
+\end{align}
+gdzie $f$ jest modelem ruchu, $h$ modelem pomiarowym, $\mathbf{u}_k$ wejściem modelu ruchu, a $\mathbf{z}_k$ obserwacją. Indeksy $-$ i $+$ oznaczają estymatę przed i po korekcji. Macierz wzmocnienia $\mathbf{K}_k$ określa wpływ obserwacji na aktualizację stanu. Jej wyznaczenie uwzględnia niepewność predykcji i pomiaru, natomiast nieliniowe modele są lokalnie linearyzowane~\cite{rb3_welch2006}.
+
+W wariancie iteracyjnym filtru model pomiarowy jest ponownie linearyzowany wokół kolejnych przybliżeń stanu. Ma to na celu ograniczenie wpływu błędu linearyzacji podczas aktualizacji. Kolejne iteracje wykorzystują tę samą obserwację, a nie nowe, niezależne pomiary. Podejście to jest stosowane w metodach FAST-LIO i FAST-LIO2 do integracji danych laserowych i inercyjnych~\cite{Xu2020FASTLIOAF,lidar_inertial_odometry_tight_coupled}.
+
+Estymację można również sformułować jako problem optymalizacji, w którym poszukiwane stany minimalizują błędy zgodności z dostępnymi pomiarami. W grafie czynników obserwacje tworzą zależności pomiędzy wybranymi zmiennymi, na przykład stanami robota z różnych chwil. Mogą one wynikać z odometrii, pomiarów IMU albo dodatkowych obserwacji pozycji. Taką reprezentację wykorzystuje LIO-SAM~\cite{9341176}. Lokalna optymalizacja występuje także przy rejestracji chmur punktów, stanowiącej podstawę odometrii laserowej MOLA~\cite{blanco2025mola_lo}.
+
+% 3.4
 \section{Algorytmy SLAM}
+
+Jednoczesna lokalizacja i mapowanie (SLAM, ang. \textit{Simultaneous Localization and Mapping}) polega na wyznaczaniu pozy robota przy równoczesnym tworzeniu reprezentacji nieznanego otoczenia. Zadania te są ze sobą powiązane: 
+\begin{itemize}
+    \item Położenie obserwowanych elementów mapy zależy od oszacowanej pozycji i orientacji robota.
+    \item Utworzona mapa może być następnie wykorzystywana do lokalizacji na podstawie kolejnych obserwacji~\cite{Blanco_Claraco_RSS_19}.
+\end{itemize}
+
+W systemach wykorzystujących skanery laserowe istotną rolę odgrywa rejestracja chmur punktów. Jej celem jest wyznaczenie macierzy transformacji dopasowującej bieżący skan do wcześniejszych obserwacji lub mapy. Zgodność dopasowania stanowi podstawę estymacji ruchu, natomiast kolejne skany, przekształcone zgodnie z wyznaczonymi pozami, umożliwiają rozbudowę mapy otoczenia~\cite{blanco2025mola_lo}.
+
 \section{Modele planowania ruchu i omijania przeszkód}
+
+Planowanie ruchu polega na wyznaczaniu sposobu przemieszczania się robota do celu z uwzględnieniem otoczenia oraz ograniczeń kinematycznych. W typowej architekturze nawigacyjnej rozróżnia się planowanie globalne i sterowanie lokalne. Planer globalny wyznacza trasę na podstawie mapy, natomiast kontroler lokalny przelicza ją na polecenia ruchu, wykorzystując bieżące oszacowanie pozy robota.
+
+Podstawą planowania może być mapa kosztów, czyli siatka komórek opisujących dopuszczalność lub względną trudność przejazdu. Dla stosu Navigation2 standardowa mapa kosztów jest dwuwymiarowa, również gdy do wykrywania przeszkód wykorzystywane są dane z czujników trójwymiarowych. Detekcja kolizji powinna uwzględniać obrys platformy. Dodatkowo stosuje się inflację, która nadaje podwyższone koszty komórkom w otoczeniu przeszkód i sztucznie wpływa na planer w celu zachowania odstępu~\cite{rb3_nav2_costmap,rb3_nav2_inflation}.
+
+Planowanie globalne można sformułować jako poszukiwanie ścieżki w grafie, którego węzły odpowiadają wybranym stanom lub komórkom mapy. Przykładem jest algorytm A*, w którym kolejność rozwijania węzłów określa funkcja
+\begin{equation}
+    f(n)=g(n)+h(n),
+    \label{eq:rb35_astar}
+\end{equation}
+gdzie $g(n)$ oznacza koszt dotarcia do węzła $n$, a $h(n)$ jest heurystycznym oszacowaniem kosztu pozostałej drogi do celu~\cite{rb3_hart1968}. Kryterium oceny może uwzględniać zarówno długość ścieżki, jak i koszty obszarów, przez które ona przebiega.
+
+Etapem nawigacji następnym po globalnym planowaniu ścieżki jest kalkulacja lokalnego sterowania pojazdu w celu podążania za wyznaczoną ścieżką. Jedną z metod śledzenia wyznaczonej ścieżki jest Pure Pursuit. Kontroler wybiera punkt na ścieżce przed robotem i wyznacza krzywiznę łuku prowadzącego do tego punktu. Jeżeli jego współrzędne w układzie robota wynoszą $(x_L,y_L)$, przy osi $x$ skierowanej do przodu i lewoskrętnym układzie współrzędnych zależności mają postać
+\begin{equation}
+    \kappa=\frac{2y_L}{L^2},
+    \qquad L=\sqrt{x_L^2+y_L^2},
+    \qquad \omega=v\kappa,
+    \label{eq:rb35_pure_pursuit}
+\end{equation}
+gdzie $\kappa$ oznacza krzywiznę zadanego ruchu, $L>0$ odległość do wybranego punktu, a $v$ i $\omega$ odpowiednio prędkość liniową i kątową. Wybór odległości wyprzedzenia wpływa na dokładność i płynność śledzenia ścieżki~\cite{rb3_macenski2023rpp}.
+
+Wariant Regulated Pure Pursuit (RPP) rozszerza tę zasadę o regulację prędkości, między innymi podczas ostrych skrętów oraz w pobliżu przeszkód. Uwzględnia również sprawdzanie przewidywanego ruchu pod kątem kolizji w ograniczonym horyzoncie. Wykrycie zagrożenia może prowadzić do zatrzymania platformy. Kontroler śledzący ścieżkę nie wyznacza jednak samodzielnie trasy obchodzącej nową przeszkodę. Jej ominięcie wymaga współpracy z planowaniem i aktualizacją mapy otoczenia~\cite{rb3_macenski2023rpp}.
+
+W przypadku robota terenowego ocena możliwości przejazdu powinna obejmować także nachylenie, nierówności podłoża oraz właściwości platformy~\cite{drones8090419}. Sama informacja o braku przeszkód nie przesądza o przejezdności. Wykorzystanie geometrii trójwymiarowej wymaga zatem przetworzenia jej do postaci odpowiedniej dla zastosowanego planera, na przykład kosztów przejazdu lub obszarów wyłączonych z ruchu. Skuteczność nawigacji zależy wówczas zarówno od wyznaczonej ścieżki, jak i od jakości lokalizacji oraz aktualności informacji o otoczeniu.
 
 \chapter{Architektura systemu i platformy sprzętowe}
 \section{Autonomiczny robot terenowy Rebob}
-\section{Czworonożny robot kroczący Unitree GO2}
+% \section{Czworonożny robot kroczący Unitree GO2}
 \section{Architektura oprogramowania}
 \section{Standardy tworzenia oprogramowania i przygotowanie systemu do wdrożeń}
 
@@ -567,7 +924,7 @@ W celu najlepszego odzwierciedlenia rzeczywistego środowiska terenowego, w któ
     \item \textbf{Wielkość środowiska:} Duży obszar pozwala na przetestowanie wydajności algorytmów tworzenia map o znacznych rozmiarach oraz globalnej lokalizacji robota
 \end{itemize}
 
-Posłużono się mapami dostępnymi w repozytorium \href{https://github.com/clearpathrobotics/clearpath_simulator}{clearpath\_simulator} firmy Clearpath Robotics. W szczególności mapy \verb|pipeline.sdf| oraz \verb|solar_farm.sdf| spełniły rygorystyczne wymagania postawione względem ukształtowania terenu. Dodatkowo wykorzystano mapy \href{https://app.gazebosim.org/maik/fuel/worlds/industrial-warehouse}{industrial\_warehouse.sdf} oraz \verb|warehouse.sdf| w celu przeprowadzenia testów porównawczych działania algorytmów nawigacji w terenie płaskim.
+Posłużono się mapami dostępnymi w repozytorium \href{https://github.com/clearpathrobotics/clearpath_simulator}{clearpath\_simulator} firmy Clearpath Robotics. W szczególności mapy \verb|pipeline.sdf| oraz \verb|solar_farm.sdf| spełniły wymagania postawione względem ukształtowania terenu. Dodatkowo wykorzystano mapy \href{https://app.gazebosim.org/maik/fuel/worlds/industrial-warehouse}{industrial\_warehouse.sdf} oraz \verb|warehouse.sdf| w celu przeprowadzenia testów porównawczych działania algorytmów nawigacji w terenie płaskim.
 
 \begin{figure}[h!]
     \centering
@@ -608,7 +965,7 @@ W modelu zdefiniowano relacje pomiędzy każdą bryłą używając przekształce
     \item \textbf{Stałe (fixed)} - zastosowane dla elementów na sztywno połączonych z ramą (IMU, kamera 3D, LIDAR 3D, antena GPS)
 \end{itemize}
 
-Struktura modelu oparta jest na plikach \verb|xacro|, które pozwalają na makroprogramowanie w formacie XML i parametryzację przekształceń. Format ten umożliwia modularyzację poprzez dzielenie definicji na wiele plików, a następnie zawieranie ich jako podmodułów w pliku głównym robota Rebob.
+Struktura modelu oparta jest na plikach \verb|xacro|, które pozwalają na definicję struktury robota w formacie XML i parametryzację przekształceń. Format ten umożliwia modularyzację poprzez dzielenie definicji na wiele plików, a następnie zawieranie ich jako podmodułów w pliku głównym.
 
 \begin{listing}[h!]
 \begin{minted}{xml}
@@ -778,7 +1135,7 @@ Moduł IMU dostarcza informacji o przyśpieszeniach liniowych i prędkościach k
 %\bibliographystyle{plplain}  % bibtex
 %\bibliography{biblio} % bibtex
 \addcontentsline{toc}{chapter}{Bibliografia}
-\printbibliography           % biblatex
+\printbibliography
 
 \begin{appendices}
 
