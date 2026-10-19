@@ -878,33 +878,145 @@ Jednoczesna lokalizacja i mapowanie (SLAM, ang. \textit{Simultaneous Localizatio
     \item Utworzona mapa może być następnie wykorzystywana do lokalizacji na podstawie kolejnych obserwacji~\cite{Blanco_Claraco_RSS_19}.
 \end{itemize}
 
-W systemach wykorzystujących skanery laserowe istotną rolę odgrywa rejestracja chmur punktów. Jej celem jest wyznaczenie macierzy transformacji dopasowującej bieżący skan do wcześniejszych obserwacji lub mapy. Zgodność dopasowania stanowi podstawę estymacji ruchu, natomiast kolejne skany, przekształcone zgodnie z wyznaczonymi pozami, umożliwiają rozbudowę mapy otoczenia~\cite{blanco2025mola_lo}.
+W przypadku skanera laserowego stan geometryczny w chwili $k$ można opisać macierzą transformacji jednorodnej
+\begin{equation}
+    \mathbf{T}_k =
+    \begin{bmatrix}
+        \mathbf{R}_k & \mathbf{t}_k \\
+        \mathbf{0}^{T} & 1
+    \end{bmatrix}
+    \in SE(3),
+    \label{eq:slam-transformacja}
+\end{equation}
+gdzie $\mathbf{R}_k \in SO(3)$ jest macierzą obrotu, a $\mathbf{t}_k \in \mathbb{R}^{3}$ wektorem położenia skanera względem układu mapy. Zbiór $SE(3)$ opisuje sztywne przekształcenia przestrzenne. Znajomość transformacji pomiędzy skanerem a punktem nawigacyjnym robota umożliwia następnie wyznaczenie pozy platformy~\cite{rb3_barfoot2017}.
+
+\subsection{Rejestracja chmur punktów}
+
+Podstawowym zadaniem lokalizacji laserowej jest wyznaczenie transformacji dopasowującej bieżącą chmurę punktów do danych odniesienia. W podejściu \textit{scan-to-scan} porównuje się kolejne skany, natomiast w podejściu \textit{scan-to-map} bieżący pomiar dopasowuje się do mapy zbudowanej z wcześniejszych obserwacji. Mapa lokalna pozwala wykorzystać informacje z większego fragmentu otoczenia, jednak jej jakość również zależy od dokładności wcześniej wyznaczonych póz~\cite{blanco2025mola_lo}.
+
+Klasyczną metodą rejestracji jest algorytm ICP (ang. \textit{Iterative Closest Point}). W kolejnych iteracjach wyznacza on korespondencje pomiędzy punktami obu zbiorów, a następnie oblicza obrót i przesunięcie zmniejszające błąd dopasowania. Dla ustalonych korespondencji wariant punkt-punkt minimalizuje funkcję
+\begin{equation}
+    E_{\mathrm{pp}}(\mathbf{R},\mathbf{t}) =
+    \sum_{i=1}^{N}
+    \left\|
+        \mathbf{R}\mathbf{p}_i + \mathbf{t}
+        - \mathbf{q}_{c(i)}
+    \right\|^{2},
+    \label{eq:slam-icp-punkt-punkt}
+\end{equation}
+gdzie $\mathbf{p}_i$ jest punktem chmury wejściowej, $\mathbf{q}_{c(i)}$ odpowiadającym mu punktem zbioru odniesienia, a $N$ liczbą zaakceptowanych par. Macierz $\mathbf{R}$ i wektor $\mathbf{t}$ przekształcają punkty wejściowe do układu odniesienia. Po aktualizacji transformacji korespondencje są wyznaczane ponownie. Obliczenia kończą się po osiągnięciu kryterium zbieżności albo limitu iteracji~\cite{rb34_besl1992}.
+
+Inną funkcję błędu wykorzystuje dopasowanie punkt-płaszczyzna. Punkt wejściowy jest odnoszony do lokalnej powierzchni opisanej punktem $\mathbf{q}_{c(i)}$ i jednostkowym wektorem normalnym $\mathbf{n}_{c(i)}$:
+\begin{equation}
+    E_{\mathrm{p\pi}}(\mathbf{R},\mathbf{t}) =
+    \sum_{i=1}^{N}
+    \left[
+        \mathbf{n}_{c(i)}^{T}
+        \left(
+            \mathbf{R}\mathbf{p}_i + \mathbf{t}
+            - \mathbf{q}_{c(i)}
+        \right)
+    \right]^{2}.
+    \label{eq:slam-icp-punkt-plaszczyzna}
+\end{equation}
+Minimalizowana jest wówczas składowa błędu prostopadła do powierzchni. Takie więzy geometryczne wykorzystuje między innymi algorytm FAST-LIO2, integrując je z pomiarami IMU w iterowanym filtrze Kalmana~\cite{lidar_inertial_odometry_tight_coupled}.
+
+Rejestracja wymaga odpowiedniego przybliżenia początkowego. Przy zbyt dużym błędzie pozy lub niewielkiej wspólnej części skanów algorytm może wyznaczyć nieprawidłowe dopasowanie. Przybliżenie ruchu może pochodzić z modelu kinematycznego, wcześniejszych wyników odometrii lub pomiarów inercyjnych. W LIO-SAM preintegracja IMU dostarcza zarówno przewidywania ruchu, jak i informacji potrzebnych do kompensacji zniekształcenia skanu~\cite{9341176}.
+
+Na wynik wpływa również przygotowanie chmury wejściowej. Ograniczenie zakresu pomiarów i zmniejszenie gęstości próbkowania pozwalają ograniczyć koszt obliczeń oraz udział punktów nieprzydatnych do estymacji. Nieprawidłowe korespondencje można odrzucać na podstawie odległości, a wpływ pozostałych obserwacji odstających ograniczać przez zastosowanie odpornych funkcji błędu~\cite{blanco2025mola_lo}.
+
+\subsection{Organizacja estymacji i optymalizacja trajektorii}
+
+W systemach SLAM często wyróżnia się warstwę przetwarzania obserwacji i warstwę estymacji. Warstwa przetwarzania odpowiada między innymi za przygotowanie danych, wyszukiwanie korespondencji i rozpoznawanie wcześniej obserwowanych miejsc. Druga wykorzystuje utworzone zależności pomiarowe do wyznaczania stanu robota i mapy. Jest to podział funkcjonalny, którego szczegółowa realizacja zależy od architektury systemu~\cite{rb34_cadena2016}.
+
+W rozwiązaniach opartych na optymalizacji grafowej kolejne pozy mogą tworzyć węzły grafu, a oszacowane przemieszczenia względne stanowią łączące je więzy. Pomiary są obarczone niepewnością, dlatego nie wszystkie zależności muszą być równocześnie spełnione. Optymalizacja wyznacza taki zbiór póz, który ogranicza łączny błąd zgodności z pomiarami, uwzględniając ich wiarygodność. Ustalenie wybranej pozy odniesienia usuwa możliwość dowolnego przesunięcia i obrotu całego grafu~\cite{rb3_barfoot2017}.
+
+Nie każdy skan musi być przechowywany jako osobny węzeł. Wykorzystanie klatek kluczowych, wybieranych na przykład na podstawie przemieszczenia lub zmiany orientacji, ogranicza rozmiar problemu. W systemach laserowo-inercyjnych estymowane zmienne mogą dodatkowo obejmować prędkość i błędy systematyczne IMU, a graf czynników uwzględniać pomiary pochodzące z różnych źródeł~\cite{9341176}.
+
+\subsection{Domykanie pętli i reprezentacja mapy}
+
+Sekwencyjna estymacja przemieszczeń prowadzi do narastania błędów, określanego jako dryf. Gdy robot powraca do wcześniej obserwowanego obszaru, możliwe jest wykrycie zamknięcia pętli (ang. loop closure). Dopasowanie aktualnych danych do wcześniejszych obserwacji dostarcza dodatkowego więzu pomiędzy odległymi w czasie stanami. W systemie grafowym ponowna optymalizacja może wówczas skorygować wcześniejszy przebieg trajektorii~\cite{rb3_barfoot2017}.
+
+Rozpoznanie podobnego miejsca wymaga weryfikacji geometrycznej. Powtarzalne układy obiektów mogą prowadzić do błędnego powiązania różnych fragmentów środowiska. Nieprawidłowy więz zamknięcia pętli może zdeformować trajektorię i mapę, dlatego jego akceptacja powinna uwzględniać zgodność dopasowania oraz pozostałych informacji pomiarowych~\cite{rb34_cadena2016}.
+
+Sposób przechowywania mapy wpływa na możliwość jej późniejszej korekcji. Zachowanie klatek kluczowych wraz z obserwacjami i pozami umożliwia ponowne zbudowanie mapy metrycznej po optymalizacji trajektorii. Jest to bardziej elastyczne niż zapis wyłącznie jednej połączonej chmury, w której nie zachowano powiązań punktów z pomiarami źródłowymi. Takie rozdzielenie reprezentacji obserwacji od wynikowej mapy jest istotnym elementem podejścia metody MOLA~\cite{blanco2025mola_lo}.
+
+Chmura punktów opisuje zarejestrowane powierzchnie, ale sama nie rozróżnia jawnie przestrzeni wolnej od niezaobserwowanej. Możliwe jest wykorzystanie reprezentacji objętościowej, w której przestrzeń dzieli się na komórki trójwymiarowe, czyli woksele. Przykładem jest OctoMap, wykorzystujący strukturę drzewa ósemkowego i probabilistyczną aktualizację zajętości. Informację o przestrzeni wolnej uzyskuje się przez analizę przebiegu promieni pomiarowych pomiędzy czujnikiem a punktami odbicia. Rozróżnienie obszarów zajętych, wolnych i nieznanych ma znaczenie przy planowaniu ruchu~\cite{rb34_hornung2013}.
+
+\subsection{Ograniczenia w środowisku terenowym}
+
+Dokładność lokalizacji zależy od geometrii otoczenia. Wynika to również z postaci funkcji błędu punkt-płaszczyzna: dla pojedynczej idealnej płaszczyzny przesunięcie równoległe do niej nie zmienia odległości prostopadłych. Duża liczba punktów należących wyłącznie do płaskiego podłoża nie zapewnia jednakowej informacji o wszystkich składowych ruchu. Obecność powierzchni o różnych orientacjach dostarcza dodatkowych ograniczeń~\cite{lidar_inertial_odometry_tight_coupled}.
+
+W terenie znaczenie mają także szybkie zmiany orientacji i drgania pojazdu. Pomiary inercyjne wspomagają estymację pomiędzy skanami, jednak ich wykorzystanie wymaga poprawnej kalibracji i synchronizacji z czujnikiem LIDAR. Obserwacje ruchomych obiektów oraz przemieszczającej się roślinności mogą natomiast naruszać założenie zgodności kolejnych pomiarów z nieruchomą sceną~\cite{9341176,rb34_cadena2016}.
+
+Oceniając wyniki, należy zatem rozróżniać dokładność bieżącej lokalizacji, spójność mapy i skuteczność korekcji globalnej. Zapis chmury punktów nie oznacza sam w sobie, że system wykonuje domykanie pętli. W porównaniu metod istotne jest określenie, które z tych mechanizmów były rzeczywiście aktywne w badanej konfiguracji.
 
 \section{Modele planowania ruchu i omijania przeszkód}
 
-Planowanie ruchu polega na wyznaczaniu sposobu przemieszczania się robota do celu z uwzględnieniem otoczenia oraz ograniczeń kinematycznych. W typowej architekturze nawigacyjnej rozróżnia się planowanie globalne i sterowanie lokalne. Planer globalny wyznacza trasę na podstawie mapy, natomiast kontroler lokalny przelicza ją na polecenia ruchu, wykorzystując bieżące oszacowanie pozy robota.
+Planowanie ruchu polega na wyznaczaniu sposobu przemieszczania się robota od stanu początkowego do celu z uwzględnieniem otoczenia i ograniczeń kinematycznych, należy przy tym odróżnić ścieżkę, opisującą geometryczny przebieg ruchu, od trajektorii, która określa również jego przebieg w czasie. Wyznaczenie bezkolizyjnej ścieżki nie rozstrzyga więc, z jaką prędkością robot powinien pokonywać jej poszczególne fragmenty~\cite{rb35_lavalle2006}.
 
-Podstawą planowania może być mapa kosztów, czyli siatka komórek opisujących dopuszczalność lub względną trudność przejazdu. Dla stosu Navigation2 standardowa mapa kosztów jest dwuwymiarowa, również gdy do wykrywania przeszkód wykorzystywane są dane z czujników trójwymiarowych. Detekcja kolizji powinna uwzględniać obrys platformy. Dodatkowo stosuje się inflację, która nadaje podwyższone koszty komórkom w otoczeniu przeszkód i sztucznie wpływa na planer w celu zachowania odstępu~\cite{rb3_nav2_costmap,rb3_nav2_inflation}.
+W typowej architekturze nawigacyjnej rozróżnia się planowanie globalne i sterowanie lokalne. Planer wyznacza ścieżkę do celu, natomiast kontroler przelicza ją na polecenia ruchu na podstawie bieżącej pozy i obserwacji otoczenia. Oba moduły korzystają z reprezentacji przeszkód i dopuszczalnych obszarów przejezdności~\cite{rb3_nav2_costmap}.
 
-Planowanie globalne można sformułować jako poszukiwanie ścieżki w grafie, którego węzły odpowiadają wybranym stanom lub komórkom mapy. Przykładem jest algorytm A*, w którym kolejność rozwijania węzłów określa funkcja
+\subsection{Reprezentacja terenu i mapy kosztów}
+
+Mapa geometryczna uzyskana przez system SLAM wymaga przetworzenia do postaci użytecznej dla planera. Mapa kosztów przypisuje obszarom otoczenia wartości opisujące względną trudność przejazdu oraz wyróżnia obszary niedopuszczalne i nieznane. W stosie Navigation2 standardowa reprezentacja kosztów jest dwuwymiarowa. Warstwa wokselowa może przetwarzać dane przestrzenne z LiDAR-u lub kamery głębi, lecz jej wynik jest rzutowany do siatki używanej do planowania i sterowania~\cite{rb3_nav2_costmap,rb35_nav2_voxel}.
+
+W nawigacji terenowej istotne jest również ukształtowanie powierzchni ziemii. Przykładem reprezentacji pośredniej jest mapa wysokościowa 2.5D, przypisująca komórkom płaszczyzny wysokość podłoża. Na podstawie lokalnej geometrii można oceniać nachylenie, nierówności i różnice wysokości. Ocena przejezdności zależy przy tym od właściwości platformy, między innymi prześwitu, wymiarów układu jezdnego i stateczności. Ten sam fragment terenu może być dopuszczalny dla jednego robota i nieprzejezdny dla innego~\cite{drones8090419}.
+
+Przetwarzanie chmury powinno zatem odróżniać podłoże od przeszkód oraz uwzględniać obszary, których geometrii nie rozpoznano dostatecznie. Sam brak punktów nie oznacza potwierdzonej przejezdności. Rozdzielczość siatki stanowi kompromis: drobne komórki umożliwiają dokładniejsze odwzorowanie przeszkód, ale zwiększają koszt obliczeń i zapotrzebowanie na pamięć~\cite{rb3_nav2_costmap}.
+
+Sprawdzanie kolizji powinno uwzględniać obrys platformy i jej orientację. Dodatkowo stosuje się inflację przeszkód, która nadaje podwyższone koszty komórkom w ich otoczeniu. Taki rozkład kosztów sprzyja prowadzeniu ścieżki z większym odstępem od przeszkód. Inflacja i ocena kolizji pełnią jednak różne funkcje: preferowany odstęp od obiektu oraz geometryczna dopuszczalność danej pozy wymagają odpowiedniego uwzględnienia w planerze i kontrolerze~\cite{rb3_nav2_costmap,rb3_nav2_inflation}.
+
+\subsection{Planowanie globalne i kryterium kosztu}
+
+Problem planowania można przedstawić jako przeszukiwanie grafu. Węzły odpowiadają stanom robota, a krawędzie dopuszczalnym przejściom pomiędzy nimi. Zależnie od modelu stan może obejmować samo położenie albo również orientację. Wybrane przejścia powinny odpowiadać kinematyce pojazdu, ponieważ możliwość osiągnięcia pozycji docelowej nie oznacza, że każdy geometryczny sposób dotarcia do niej jest wykonalny~\cite{rb35_lavalle2006}.
+
+Kryterium wyboru ścieżki może łączyć jej długość z trudnością przejazdu. Przykładowy model ma postać
 \begin{equation}
-    f(n)=g(n)+h(n),
-    \label{eq:rb35_astar}
+    J(P) = \sum_{i=1}^{m}
+        \ell_i\left(1 + \lambda\overline{C}_i\right),
+    \label{eq:planowanie-koszt-sciezki}
 \end{equation}
-gdzie $g(n)$ oznacza koszt dotarcia do węzła $n$, a $h(n)$ jest heurystycznym oszacowaniem kosztu pozostałej drogi do celu~\cite{rb3_hart1968}. Kryterium oceny może uwzględniać zarówno długość ścieżki, jak i koszty obszarów, przez które ona przebiega.
+gdzie $P$ jest ścieżką złożoną z $m$ odcinków, $\ell_i$ długością odcinka, $\overline{C}_i \in [0,1]$ znormalizowanym średnim kosztem obszarów, przez które on przebiega, a $\lambda \geq 0$ wagą trudności przejazdu. Odcinki prowadzące przez obszary niedopuszczalne są wykluczane. W tym modelu krótsza ścieżka może mieć większy koszt niż dłuższy przejazd przez łatwiejszy teren. Wykorzystanie kosztów zależnych od właściwości terenu jest stosowane w planowaniu dla pojazdów terenowych~\cite{drones8090419}.
 
-Etapem nawigacji następnym po globalnym planowaniu ścieżki jest kalkulacja lokalnego sterowania pojazdu w celu podążania za wyznaczoną ścieżką. Jedną z metod śledzenia wyznaczonej ścieżki jest Pure Pursuit. Kontroler wybiera punkt na ścieżce przed robotem i wyznacza krzywiznę łuku prowadzącego do tego punktu. Jeżeli jego współrzędne w układzie robota wynoszą $(x_L,y_L)$, przy osi $x$ skierowanej do przodu i lewoskrętnym układzie współrzędnych zależności mają postać
+Przykładem algorytmu przeszukiwania jest A*, w którym priorytet rozwijania węzła $n$ określa funkcja
 \begin{equation}
-    \kappa=\frac{2y_L}{L^2},
-    \qquad L=\sqrt{x_L^2+y_L^2},
-    \qquad \omega=v\kappa,
-    \label{eq:rb35_pure_pursuit}
+    f(n) = g(n) + h(n),
+    \label{eq:planowanie-astar}
 \end{equation}
-gdzie $\kappa$ oznacza krzywiznę zadanego ruchu, $L>0$ odległość do wybranego punktu, a $v$ i $\omega$ odpowiednio prędkość liniową i kątową. Wybór odległości wyprzedzenia wpływa na dokładność i płynność śledzenia ścieżki~\cite{rb3_macenski2023rpp}.
+gdzie $g(n)$ oznacza najmniejszy dotychczas znaleziony koszt dotarcia do węzła, a $h(n)$ heurystyczne oszacowanie kosztu pozostałej drogi. Heurystyka dopuszczalna nie przeszacowuje tego kosztu. Jej postać powinna odpowiadać funkcji kosztu używanej podczas przeszukiwania grafu~\cite{rb3_hart1968}.
 
-Wariant Regulated Pure Pursuit (RPP) rozszerza tę zasadę o regulację prędkości, między innymi podczas ostrych skrętów oraz w pobliżu przeszkód. Uwzględnia również sprawdzanie przewidywanego ruchu pod kątem kolizji w ograniczonym horyzoncie. Wykrycie zagrożenia może prowadzić do zatrzymania platformy. Kontroler śledzący ścieżkę nie wyznacza jednak samodzielnie trasy obchodzącej nową przeszkodę. Jej ominięcie wymaga współpracy z planowaniem i aktualizacją mapy otoczenia~\cite{rb3_macenski2023rpp}.
+Wynik optymalizacji odnosi się do wybranego grafu i funkcji kosztu. Zmiana rozdzielczości, dopuszczalnych kierunków przejścia lub uwzględnianych składowych stanu może prowadzić do innej ścieżki. Dyskretny wynik może wymagać wygładzenia, przy czym modyfikacja jego geometrii wymaga ponownego sprawdzenia kolizji~\cite{rb35_lavalle2006}.
 
-W przypadku robota terenowego ocena możliwości przejazdu powinna obejmować także nachylenie, nierówności podłoża oraz właściwości platformy~\cite{drones8090419}. Sama informacja o braku przeszkód nie przesądza o przejezdności. Wykorzystanie geometrii trójwymiarowej wymaga zatem przetworzenia jej do postaci odpowiedniej dla zastosowanego planera, na przykład kosztów przejazdu lub obszarów wyłączonych z ruchu. Skuteczność nawigacji zależy wówczas zarówno od wyznaczonej ścieżki, jak i od jakości lokalizacji oraz aktualności informacji o otoczeniu.
+\subsection{Śledzenie ścieżki i sterowanie lokalne}
+
+Kontroler lokalny wyznacza polecenia ruchu z uwzględnieniem błędu względem ścieżki oraz ograniczeń prędkości i przyspieszeń pojazdu. Dla robota o napędzie różnicowym lub sterowaniu burtowym polecenia te mogą być opisane prędkością wzdłużną $v$ i kątową $\omega$. Dobór dopuszczalnego sterowania powinien uwzględniać również możliwość zatrzymania przed przeszkodą~\cite{rb35_fox1997dwa}.
+
+Metoda Pure Pursuit polega na wyborze punktu wyprzedzenia na ścieżce i wyznaczeniu krzywizny łuku prowadzącego do niego. Dla współrzędnych $(x_L,y_L)$ tego punktu w układzie robota, przy osi $x$ skierowanej do przodu i osi $y$ w lewo (układ prawoskrętny), zależności mają postać
+\begin{equation}
+    \kappa = \frac{2y_L}{L^2},
+    \qquad L = \sqrt{x_L^2+y_L^2}>0,
+    \qquad \omega = v\kappa,
+    \label{eq:planowanie-pure-pursuit}
+\end{equation}
+gdzie $\kappa$ jest krzywizną zadanego ruchu, a $L$ odległością od robota do punktu wyprzedzenia. Jej dobór wpływa na szybkość zbiegania do ścieżki i skłonność do oscylacji. Możliwe jest również uzależnienie odległości wyprzedzenia od prędkości~\cite{rb3_macenski2023rpp}.
+
+Regulated Pure Pursuit (RPP) rozszerza tę zasadę o regulację prędkości, między innymi podczas ostrych skrętów i w pobliżu przeszkód. Przewidywany ruch jest sprawdzany pod kątem kolizji w ograniczonym horyzoncie. Wykrycie zagrożenia może prowadzić do zatrzymania pojazdu. RPP pozostaje jednak kontrolerem śledzącym zadaną ścieżkę i wyznaczenie alternatywnego przebiegu trasy wymaga współpracy z planerem~\cite{rb3_macenski2023rpp}.
+
+Inne podejście reprezentuje metoda dynamicznego okna (DWA, ang. Dynamic Window Approach). W przestrzeni par $(v,\omega)$ analizowane są ruchy osiągalne przy ograniczonych przyspieszeniach i pozwalające na zatrzymanie przed przeszkodą. Kandydaci są oceniani na podstawie kierunku ruchu względem celu, odległości od przeszkód i prędkości. Pozwala to powiązać dobór sterowania z lokalną geometrią otoczenia~\cite{rb35_fox1997dwa}.
+
+\subsection{Reakcja na przeszkody i ograniczenia terenowe}
+
+Nowa przeszkoda może zablokować ścieżkę wyznaczoną wcześniej. Jeżeli kontroler nie znajduje dopuszczalnego ruchu, konieczne może być zatrzymanie i ponowne planowanie. W szczególności wykrywanie kolizji przez RPP nie wyznacza samo w sobie alternatywnej trasy~\cite{rb3_macenski2023rpp}.
+
+Znaczenie opóźnień można pokazać na uproszczonym modelu ruchu prostoliniowego. Jeżeli robot przez czas reakcji $\tau$ porusza się ze stałą prędkością $v\geq 0$, a następnie hamuje ze stałym opóźnieniem $a_b>0$, droga do zatrzymania wynosi
+\begin{equation}
+    d_{\mathrm{stop}} = v\tau + \frac{v^2}{2a_b}.
+    \label{eq:planowanie-droga-zatrzymania}
+\end{equation}
+Pierwszy składnik opisuje drogę przebytą przed rozpoczęciem hamowania, a drugi samo hamowanie. Model pokazuje, dlaczego dobór prędkości wymaga uwzględnienia zarówno aktualności danych, jak i zdolności zatrzymania platformy. Zależność dopuszczalnej prędkości od możliwości hamowania jest jednym z założeń DWA~\cite{rb35_fox1997dwa}.
+
+W terenie możliwości te zależą dodatkowo od nachylenia i właściwości podłoża. Sama mapa geometryczna nie dostarcza pełnej informacji o przyczepności ani nośności powierzchni. Z tego względu analiza wyników nawigacji powinna obejmować nie tylko długość wyznaczonej ścieżki, lecz także skuteczność osiągania celu, przebieg ruchu oraz przyczyny zatrzymań. Rozdzielenie tych zagadnień ułatwia ocenę wpływu percepcji, lokalizacji i planowania na działanie całego systemu.
 
 \chapter{Architektura systemu i platformy sprzętowe}
 \section{Autonomiczny robot terenowy Rebob}

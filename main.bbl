@@ -184,6 +184,41 @@
     \field{year}{2017}
   \endentry
 
+  \entry{rb34_besl1992}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BPJ}{%
+         family={Besl},
+         familyi={B\bibinitperiod},
+         given={Paul\bibnamedelima J.},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MND}{%
+         family={McKay},
+         familyi={M\bibinitperiod},
+         given={Neil\bibnamedelima D.},
+         giveni={N\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BPJMND1}
+    \strng{fullhash}{BPJMND1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1109/34.121791
+    \endverb
+    \field{number}{2}
+    \field{pages}{239\bibrangedash 256}
+    \field{title}{A Method for Registration of {3-D} Shapes}
+    \verb{url}
+    \verb https://doi.org/10.1109/34.121791
+    \endverb
+    \field{volume}{14}
+    \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+    \field{year}{1992}
+  \endentry
+
   \entry{Beuchert2023RawGNSSFusion}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=BJ}{%
@@ -273,6 +308,77 @@
     \endverb
     \field{title}{A Modular Optimization Framework for Localization and Mapping}
     \field{year}{2019}
+  \endentry
+
+  \entry{rb34_cadena2016}{article}{}
+    \name{author}{8}{}{%
+      {{hash=CC}{%
+         family={Cadena},
+         familyi={C\bibinitperiod},
+         given={Cesar},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Carlone},
+         familyi={C\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Carrillo},
+         familyi={C\bibinitperiod},
+         given={Henry},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Latif},
+         familyi={L\bibinitperiod},
+         given={Yasir},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Scaramuzza},
+         familyi={S\bibinitperiod},
+         given={Davide},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=NJ}{%
+         family={Neira},
+         familyi={N\bibinitperiod},
+         given={Jose},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RI}{%
+         family={Reid},
+         familyi={R\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=LJJ}{%
+         family={Leonard},
+         familyi={L\bibinitperiod},
+         given={John\bibnamedelima J.},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CC+1}
+    \strng{fullhash}{CCCLCHLYSDNJRILJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1109/TRO.2016.2624754
+    \endverb
+    \field{number}{6}
+    \field{pages}{1309\bibrangedash 1332}
+    \field{title}{Past, Present, and Future of Simultaneous Localization and Mapping: Toward the Robust-Perception Age}
+    \verb{url}
+    \verb https://arxiv.org/abs/1606.05830
+    \endverb
+    \field{volume}{32}
+    \field{journaltitle}{IEEE Transactions on Robotics}
+    \field{year}{2016}
   \endentry
 
   \entry{DONG2025103457}{article}{}
@@ -496,6 +602,48 @@
     \field{year}{2017}
   \endentry
 
+  \entry{rb35_fox1997dwa}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FD}{%
+         family={Fox},
+         familyi={F\bibinitperiod},
+         given={Dieter},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BW}{%
+         family={Burgard},
+         familyi={B\bibinitperiod},
+         given={Wolfram},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=TS}{%
+         family={Thrun},
+         familyi={T\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FDBWTS1}
+    \strng{fullhash}{FDBWTS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1109/100.580977
+    \endverb
+    \field{number}{1}
+    \field{pages}{23\bibrangedash 33}
+    \field{title}{The Dynamic Window Approach to Collision Avoidance}
+    \verb{url}
+    \verb https://publications.ri.cmu.edu/storage/publications/pub_files/pub1/f
+    \verb ox_dieter_1997_1/fox_dieter_1997_1.pdf
+    \endverb
+    \field{volume}{4}
+    \field{journaltitle}{IEEE Robotics \& Automation Magazine}
+    \field{year}{1997}
+  \endentry
+
   \entry{GRIFFITHS1997485}{article}{}
     \name{author}{4}{}{%
       {{hash=GIJ}{%
@@ -688,6 +836,59 @@
     \field{year}{2016}
   \endentry
 
+  \entry{rb34_hornung2013}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HA}{%
+         family={Hornung},
+         familyi={H\bibinitperiod},
+         given={Armin},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WKM}{%
+         family={Wurm},
+         familyi={W\bibinitperiod},
+         given={Kai\bibnamedelima M.},
+         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Bennewitz},
+         familyi={B\bibinitperiod},
+         given={Maren},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Stachniss},
+         familyi={S\bibinitperiod},
+         given={Cyrill},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BW}{%
+         family={Burgard},
+         familyi={B\bibinitperiod},
+         given={Wolfram},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HA+1}
+    \strng{fullhash}{HAWKMBMSCBW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1007/s10514-012-9321-0
+    \endverb
+    \field{number}{3}
+    \field{pages}{189\bibrangedash 206}
+    \field{title}{{OctoMap}: An Efficient Probabilistic {3D} Mapping Framework Based on Octrees}
+    \verb{url}
+    \verb https://www.arminhornung.de/Research/pub/hornung13auro.pdf
+    \endverb
+    \field{volume}{34}
+    \field{journaltitle}{Autonomous Robots}
+    \field{year}{2013}
+  \endentry
+
   \entry{javid_article}{article}{}
     \name{author}{1}{}{%
       {{hash=JA}{%
@@ -826,6 +1027,31 @@
     \field{pages}{176\bibrangedash 181}
     \field{title}{Where Do We Go from Here? Charting the Future of Unmanned Vehicles}
     \field{year}{2025}
+  \endentry
+
+  \entry{rb35_lavalle2006}{book}{}
+    \name{author}{1}{}{%
+      {{hash=LSM}{%
+         family={LaValle},
+         familyi={L\bibinitperiod},
+         given={Steven\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{LSM1}
+    \strng{fullhash}{LSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Planning Algorithms}
+    \verb{url}
+    \verb https://lavalle.pl/planning/
+    \endverb
+    \field{year}{2006}
   \endentry
 
   \entry{li2023transformer}{article}{}
@@ -1243,6 +1469,29 @@
     \verb on_guide/core_servers/costmap_2d/costmap_plugins/inflation/
     \endverb
     \field{urlday}{12}
+    \field{urlmonth}{10}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{rb35_nav2_voxel}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={{Nav2 Project}},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Voxel Layer Parameters: {Nav2} Documentation ({Jazzy})}
+    \verb{url}
+    \verb https://docs.nav2.org/jazzy/configuration_and_development/configurati
+    \verb on_guide/core_servers/costmap_2d/costmap_plugins/voxel/
+    \endverb
+    \field{urlday}{18}
     \field{urlmonth}{10}
     \field{urlyear}{2026}
   \endentry
